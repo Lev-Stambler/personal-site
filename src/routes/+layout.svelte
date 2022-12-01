@@ -11,13 +11,18 @@
 	</main>
 
 	<footer>
-		<p>Find me on <a href="https://github.com/Lev-Stambler">Github</a></p>
+		<a href="https://github.com/Lev-Stambler">Github</a>
+		<a href="https://github.com/Lev-Stambler">LinkdIn</a>
+		<a href="https://github.com/Lev-Stambler">Twitter</a>
+		<a href="https://github.com/Lev-Stambler">Contact Me</a>
 	</footer>
 </div>
 
 <style>
 	.app {
 		min-height: 100vh;
+		display: grid;
+		grid-template-rows: auto auto auto;
 	}
 
 	main {
@@ -26,14 +31,15 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+		min-height: 80vh;
 	}
 
 	footer {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);	
 		justify-content: center;
-		align-items: center;
-		padding: 12px;
+		justify-items: center;
+		padding: 0 25% !important;
 	}
 
 	footer a {

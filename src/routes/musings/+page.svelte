@@ -1,0 +1,25 @@
+<script lang="ts">
+	import { SvelteComponent } from "svelte";
+
+
+	const musings = [['Theorem Provers',  'Thoughts here']];
+</script>
+
+<svelte:head>
+	<title>Musings</title>
+	<meta name="description" content="Musings" />
+</svelte:head>
+
+<div class="text-column current-research">
+	<h1>Things I am Thinking About</h1>
+	{#each musings as musing, i}
+		<h2>{i + 1}) {musing[0]}</h2>
+		{musing[1]}
+	{/each}
+</div>
+
+<style>
+	h2 {
+		font-size: 1.3rem;
+	}
+</style>

@@ -9,19 +9,34 @@
 </svelte:head>
 
 <section>
-	<h1>Hello!</h1>
-	<a href="https://github.com/Lev-Stambler/3D-Turtles" target="blank" label="3D Turtles and Exploration">
-		<img src={turtle} alt="Welcome" />
-	</a>
-
-	<h2>
-		I am Lev. Here are the quick highlights
+	<div class="left">
+		<h1 style="text-align: left;">Hello!</h1>
+		<p>
+			My name is Lev.
+			<br />
+			<br />
+			I don't have too much to say about myself, so I will keep it brief:
+		</p>
 		<ul>
-			<li>TCS is fun</li>
-			<li>I like to code</li>
 			<li>I like to learn</li>
+			<li>I like to code</li>
+			<li>I find math and theoretical computer science quite fun</li>
+			<li>I like tea</li>
 		</ul>
-	</h2>
+	</div>
+	<div class="right">
+		<a
+			href="https://github.com/Lev-Stambler/3D-Turtles"
+			target="blank"
+			label="3D Turtles and Exploration"
+		>
+			<img src={turtle} alt="Welcome" />
+		</a>
+		<p>
+			The above picture is from a recent project which explores "drawing" rational numbers in
+			different dimensions
+		</p>
+	</div>
 </section>
 
 <style>
@@ -35,7 +50,7 @@
 		grid-template-rows: repeat(2, auto);
 	}
 
-	a {
+	.right {
 		width: 100%;
 		padding-left: 10rem;
 		height: auto;
@@ -44,12 +59,13 @@
 		grid-column: span 2;
 	}
 
-	h1 {
-		grid-column: span 1;
-		height: min-content;
-	}
-	h2 {
+	.left {
 		align-self: baseline;
+		grid-row: span 2;
 		justify-self: start;
+	}
+	.left ul li {
+		padding: 0.2rem 0;
+		list-style: katakana;
 	}
 </style>
