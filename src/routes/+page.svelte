@@ -1,59 +1,55 @@
 <script>
 	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import turtle from '$lib/images/turtle-good.png';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Lev Stambler</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
+	<h1>Hello!</h1>
+	<a href="https://github.com/Lev-Stambler/3D-Turtles" target="blank" label="3D Turtles and Exploration">
+		<img src={turtle} alt="Welcome" />
+	</a>
 
 	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
+		I am Lev. Here are the quick highlights
+		<ul>
+			<li>TCS is fun</li>
+			<li>I like to code</li>
+			<li>I like to learn</li>
+		</ul>
 	</h2>
-
-	<Counter />
 </section>
 
 <style>
 	section {
-		display: flex;
-		flex-direction: column;
+		width: 100%;
+		display: grid;
 		justify-content: center;
 		align-items: center;
-		flex: 0.6;
+		gap: 1rem;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: repeat(2, auto);
+	}
+
+	a {
+		width: 100%;
+		padding-left: 10rem;
+		height: auto;
+		justify-self: center;
+		grid-row: span 2;
+		grid-column: span 2;
 	}
 
 	h1 {
-		width: 100%;
+		grid-column: span 1;
+		height: min-content;
 	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	h2 {
+		align-self: baseline;
+		justify-self: start;
 	}
 </style>
