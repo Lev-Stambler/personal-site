@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>Lev Stambler</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="description" content="Lev Stambler's Personal Site" />
 </svelte:head>
 
 <section>
