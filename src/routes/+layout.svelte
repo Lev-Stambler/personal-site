@@ -12,9 +12,11 @@
 
 	<footer>
 		<a href="https://github.com/Lev-Stambler">Github</a>
-		<a href="https://github.com/Lev-Stambler">LinkdIn</a>
-		<a href="https://github.com/Lev-Stambler">Twitter</a>
-		<a href="https://github.com/Lev-Stambler">Contact Me</a>
+		<a
+			href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwibxLKEyeD7AhW5GlkFHS-fAyoQFnoECBgQAQ&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Flev-stambler-888052154"
+			>LinkedIn</a
+		>
+		<a href="mailto:lev.stambler@gmail.com">Email Me</a>
 	</footer>
 </div>
 
@@ -36,10 +38,11 @@
 
 	footer {
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);	
+		grid-template-columns: repeat(4, 1fr);
 		justify-content: center;
 		justify-items: center;
 		padding: 0 25% !important;
+		margin-bottom: 1rem;
 	}
 
 	footer a {
