@@ -1,5 +1,4 @@
 <script>
-	import Counter from './Counter.svelte';
 	import turtle from '$lib/images/turtle-good.png';
 </script>
 
