@@ -2,7 +2,7 @@
 slug: theorem-proving
 title: Theorem Proving's Potential 
 date: 2022-12-04
-excerpt: "Embedding Space and AI, learning, and unifying programming and proving. Why I'm excited for theorem proving"
+excerpt: "Embedding spaces and AI, learning, and unifying programming and proving. Why I'm excited for theorem proving."
 tags: [Theorem Proving]
 imgSrc: /blog/lean-scratch.png
 ---
