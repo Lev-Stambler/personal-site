@@ -34,10 +34,11 @@ export default filteredPosts;
 import { error } from '@sveltejs/kit';
 
 export async function load() {
-	const result = Object.keys(posts).map((index) => {
-		const { slug, title, date, excerpt, tags, readingTime, } = posts[index];
+	const result = Object.keys(posts).map((index: any) => {
+		const { slug, title, date, excerpt, tags, readingTime, imgSrc } = posts[index];
 		return {
 			slug,
+			imgSrc,
 			title,
 			date,
 			excerpt,

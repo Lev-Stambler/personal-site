@@ -13,7 +13,7 @@
 			<a href="https://www.guiltygyoza.xyz/2022/11/double-blind">double blinding</a>
 			protocol. Essentially, a computing party (Alice) knowns some function and a customer (Bob) wants
 			to evaluate his input on this function. Alice does not want to reveal the function, and Bob does
-			not want to reveal his input. But, Bob wants to ensure that Alice is not cheating him.
+			not want to reveal his input. But, Bob a proof that his input was evaluated on the promised function.
 		</p>
 	</div>
 	<div class="research-item">
@@ -23,7 +23,7 @@
 			alt="Unitary Fund Badge"
 		/>
 		<p>
-			Recieved grant from the Unitary fund to create a decoding library for simulated noise. The
+			Received grant from the Unitary fund to create a decoding library for simulated noise. The
 			noise will be simulated via <a href="https://github.com/quantumlib/Stim">Stim</a>. Further
 			work includes using reinforcement learning to learn quantum LDPC codes with good performance.
 		</p>
@@ -36,7 +36,7 @@
 			<a href="https://arxiv.org/abs/1504.00822"
 				>hypergraph product codes (also known as quantum expander codes).</a
 			>
-			We are wrapping up research and have achieved a 4x - 10x decrease in word error rates over state
+			We are wrapping up research and initial data suggests that we have achieved an order of magnitude decrease in word error rates over state
 			of the art. We also introduce provably correct algorithmic changes which speed up the SSF decoder
 			introduced in
 			<a href="https://arxiv.org/abs/1504.00822"> the hypergraph product code paper</a> by 10-100x.
@@ -68,7 +68,7 @@
 			connected to discrete logs and roots of a very specific multinomial with coefficients of +/-
 			1. The paper can be found on <a
 				href="https://github.com/Lev-Stambler/3D-Turtles/blob/master/paper/Paper.pdf">Github</a
-			>. With a friend, we also created a visualization which creates some rather beautiful shapes.
+			>. With a friend <a href="https://www.shivaperi.com/">(Shiva Peri)</a>, we also created a visualization which creates some rather beautiful shapes.
 			We also posted an <a href="https://3dturtles.groked.co/">interactive website</a> to play around
 			with parameters.
 		</p>

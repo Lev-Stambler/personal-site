@@ -8,14 +8,12 @@ let posts: any[] = [];
 for (let path in allPosts) {
 	const post: any = allPosts[path];
 	const slug = post.metadata.slug;
-	const p = { post, slug };
+	const p = { post, slug, metadata: post.metadata };
 	posts.push(p);
 }
 
-console.log(allPosts)
-
 export function load({ params }: any) {
-	const { slug } = params;
+	const {slug} = params;
 
 	// Find the post with the slug
 	const filteredPost = posts.find((p) => {
@@ -23,6 +21,7 @@ export function load({ params }: any) {
 	});
 	return {
 		// Tell page to load that post's module
-		page: filteredPost.post.default
+		page: filteredPost.post.default,
+		...(filteredPost.metadata)
 	};
 }

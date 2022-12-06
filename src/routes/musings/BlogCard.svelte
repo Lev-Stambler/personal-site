@@ -6,6 +6,7 @@
 		readingTime: number | undefined;
 		tags: string[];
 		title: string;
+		imgSrc: string;
 	} | null = null;
 </script>
 
@@ -19,9 +20,12 @@
 		<h2>
 			{post?.title}
 		</h2>
-		{new Date(post?.date || '').toLocaleString()}
-		<hr />
-		<p>{post?.excerpt}</p>
+		<div>
+			{new Date(post?.date || '').toDateString()}
+			<hr />
+			<p>{post?.excerpt}</p>
+		</div>
+		<img src={post?.imgSrc} alt="" />
 	</div>
 </div>
 
@@ -30,10 +34,16 @@
 		cursor: pointer;
 		box-sizing: border-box;
 		border: 1px black solid;
-		padding: 1rem;
+		padding: 2rem;
 		display: grid;
+		grid-template-columns: 60% 40%;
+		gap: 1rem;
 	}
 	h2 {
+		grid-column: span 2;
 		font-size: 1.3rem;
+	}
+	img {
+		width: 100%;
 	}
 </style>
