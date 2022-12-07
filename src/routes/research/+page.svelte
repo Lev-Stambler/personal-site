@@ -13,7 +13,7 @@
 			<a href="https://www.guiltygyoza.xyz/2022/11/double-blind">double blinding</a>
 			protocol. Essentially, a computing party (Alice) knowns some function and a customer (Bob) wants
 			to evaluate his input on this function. Alice does not want to reveal the function, and Bob does
-			not want to reveal his input. But, Bob a proof that his input was evaluated on the promised function.
+			not want to reveal his input. But, Bob wants a proof that his input was evaluated on the promised function.
 		</p>
 	</div>
 	<div class="research-item">
