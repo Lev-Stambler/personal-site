@@ -6,7 +6,7 @@
 <div class="text-column current-research">
 	<h1>Current Research Project</h1>
 
-	<div class="research-item">
+	<!-- <div class="research-item">
 		<h2>Fully Homomorphic Encryption and Private Functions Commitments</h2>
 		<p>
 			Working with <a href="https://www.topology.gg/">Topology</a> to create a
@@ -15,7 +15,7 @@
 			to evaluate his input on this function. Alice does not want to reveal the function, and Bob does
 			not want to reveal his input. But, Bob wants a proof that his input was evaluated on the promised function.
 		</p>
-	</div>
+	</div> -->
 	<div class="research-item">
 		<h2>Reinforcment Learning to Create Better Quantum Codes Under Various Noise Models</h2>
 		<img
