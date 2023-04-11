@@ -5,26 +5,32 @@
 
 <div class="text-column current-research">
 	<h1>Ongoing Work</h1>
-
 	<div class="research-item">
-		<h2>Private Playable Game Character</h2>
+		<h2>Helping Teams with ZK</h2>
 		<p>
-			I am currently working with <a href="https://www.topology.gg/">Topology</a> to create a game. The game
-			allows players to create characters which battle other characters. Each character's
-			functionality and internal state is only known to the creator of the character. When characters fight
-			each other, each player submits a set of actions performed by their respective character to a blockchain
-			as well as a proof that the action done was correct with respect to the character's internal state. Work included
-			creating the cryptographic specification, implementing ZK-SNARK circuits in <a href="https://github.com/iden3/circom">Circom</a>,
-			and writing a basic compiler.
+			Currently, I am helping a team build a zero-knowledge protocol on top of Ethereum. More information to come.	
 		</p>
 	</div>
+
 </div>
 
 <hr />
 
 <div class="text-column">
 	<h1>Past Work</h1>
-	<hr />
+	<div class="research-item">
+		<h2>Private Playable Game Character</h2>
+		<p>
+			I am currently working with <a href="https://www.topology.gg/">Topology</a> to create a game.
+			The game allows players to create characters which battle other characters. Each character's
+			functionality and internal state is only known to the creator of the character. When
+			characters fight each other, each player submits a set of actions performed by their
+			respective character to a blockchain as well as a proof that the action done was correct with
+			respect to the character's internal state. Work included creating the cryptographic
+			specification, implementing ZK-SNARK circuits in
+			<a href="https://github.com/iden3/circom">Circom</a>, and writing a basic compiler.
+		</p>
+	</div>
 	<div class="research-item">
 		<h2>On Chain Randomness for Video Games</h2>
 		<p>

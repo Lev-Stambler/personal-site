@@ -5,27 +5,49 @@
 
 <div class="text-column current-research">
 	<h1>Current Research Project</h1>
-
 	<!-- <div class="research-item">
-		<h2>Fully Homomorphic Encryption and Private Functions Commitments</h2>
+		<h2>Thinking About</h2>
 		<p>
-			Working with <a href="https://www.topology.gg/">Topology</a> to create a
-			<a href="https://www.guiltygyoza.xyz/2022/11/double-blind">double blinding</a>
-			protocol. Essentially, a computing party (Alice) knowns some function and a customer (Bob) wants
-			to evaluate his input on this function. Alice does not want to reveal the function, and Bob does
-			not want to reveal his input. But, Bob wants a proof that his input was evaluated on the promised function.
+			Working on modifying <a href="https://eprint.iacr.org/2022/1368.pdf"
+				>a lattice based function commitment</a
+			> to verify FHE. Work includes expanding on the function commitment to support operations over
+			matrices of polynomial ring elements. Then, the paper gives a concrete instantiation of verifiable
+			leveled FHE using Torus FHE. To my knowledge, this is the first non-trusted hardware scheme which
+			is secure against decryption failure oracle attacks.
 		</p>
 	</div> -->
 	<div class="research-item">
-		<h2>Reinforcment Learning to Create Better Quantum Codes Under Various Noise Models</h2>
+		<h2>Towards Function Private, Verifiable Leveled Fully Homomorphic Encryption</h2>
+		<p>
+			Working on modifying <a href="https://eprint.iacr.org/2022/1368.pdf"
+				>a lattice based function commitment</a
+			> to verify FHE. Work includes expanding on the function commitment to support operations over
+			matrices of polynomial ring elements. The work also gives a concrete instantiation of verifiable
+			leveled FHE using Torus FHE. To my knowledge, this is the first non-trusted hardware scheme which
+			is secure against decryption failure oracle attacks.
+		</p>
+	</div>
+</div>
+
+<hr />
+
+<div class="text-column">
+	<h1>Research Being Wrapped Up</h1>
+	<div class="research-item">
+		<h2>Machine Learning to Create Better Quantum Codes</h2>
 		<img
 			src="https://img.shields.io/badge/Supported%20By-UNITARY%20FUND-brightgreen.svg?style=for-the-badge"
 			alt="Unitary Fund Badge"
 		/>
 		<p>
-			Received grant from the Unitary fund to create a decoding library for simulated noise. The
-			noise will be simulated via <a href="https://github.com/quantumlib/Stim">Stim</a>. Further
-			work includes using reinforcement learning to learn quantum LDPC codes with good performance.
+			Received a grant from the Unitary Fund to use machine learning to discover better Quantum LDPC
+			codes. Work focused on finding better <a
+				href="https://iopscience.iop.org/article/10.1088/2058-9565/aac64e#:~:text=Abstract,to%20fix%20the%20code%20distance."
+				>coherent parity check codes.</a
+			>
+			Both reinforcement learning and deep learning based combinatorial optimization techniques were
+			used. Unfortunately, learned codes performed no better than sampling ~100 random codes and using
+			the best ones. A postmortem blogpost is soon to come.
 		</p>
 	</div>
 	<div class="research-item">
@@ -36,10 +58,10 @@
 			<a href="https://arxiv.org/abs/1504.00822"
 				>hypergraph product codes (also known as quantum expander codes).</a
 			>
-			We are wrapping up research and initial data suggests that we have achieved an order of magnitude decrease in word error rates over state
-			of the art. We also introduce provably correct algorithmic changes which speed up the SSF decoder
-			introduced in
-			<a href="https://arxiv.org/abs/1504.00822"> the hypergraph product code paper</a> by 10-100x.
+			We are wrapping up research and data suggests that we have achieved an order of magnitude decrease
+			in word error rates when using a novel post-decoder for the
+			<a href="https://arxiv.org/abs/1504.00822">Small Set Flip algorithm (SSF)</a>. We also
+			introduce provably correct algorithmic changes which speed up the SSF decoder by 10-100x.
 		</p>
 	</div>
 </div>
@@ -48,7 +70,6 @@
 
 <div class="text-column">
 	<h1>Past Research</h1>
-	<hr />
 	<div class="research-item">
 		<h2>Weighted Secret Sharing from the Wiretap Channel</h2>
 		<p>
@@ -68,9 +89,9 @@
 			connected to discrete logs and roots of a very specific multinomial with coefficients of +/-
 			1. The paper can be found on <a
 				href="https://github.com/Lev-Stambler/3D-Turtles/blob/master/paper/Paper.pdf">Github</a
-			>. With a friend <a href="https://www.shivaperi.com/">(Shiva Peri)</a>, we also created a visualization which creates some rather beautiful shapes.
-			We also posted an <a href="https://3dturtles.groked.co/">interactive website</a> to play around
-			with parameters.
+			>. With a friend <a href="https://www.shivaperi.com/">(Shiva Peri)</a>, we also created a
+			visualization which creates some rather beautiful shapes. We also posted an
+			<a href="https://3dturtles.groked.co/">interactive website</a> to play around with parameters.
 		</p>
 		<img
 			style="justify-self: center; width: 100%; padding: 0 20%; box-sizing: border-box;"

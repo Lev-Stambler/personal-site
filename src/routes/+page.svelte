@@ -32,7 +32,7 @@
 			<img src={turtle} alt="Welcome" />
 		</a>
 		<p>
-			The above picture is from a recent project which explores "drawing" rational numbers in
+			The above picture is from a project which explores "drawing" rational numbers in
 			different dimensions
 		</p>
 	</div>
