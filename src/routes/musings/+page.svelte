@@ -25,7 +25,4 @@
 </div>
 
 <style>
-	h2 {
-		font-size: 1.3rem;
-	}
 </style>

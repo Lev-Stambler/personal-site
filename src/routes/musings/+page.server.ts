@@ -29,7 +29,7 @@ const filteredPosts = posts
 	);
 
 // Expose this info to other files
-export default filteredPosts;
+// export filteredPosts;
 
 import { error } from '@sveltejs/kit';
 
