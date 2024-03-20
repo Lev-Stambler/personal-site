@@ -17,14 +17,19 @@
 		</p>
 	</div> -->
 	<div class="research-item">
-		<h2>Towards Function Private, Verifiable Leveled Fully Homomorphic Encryption</h2>
+		<h2>Dictator Restrictions for Transformers</h2>
 		<p>
-			Working on modifying <a href="https://eprint.iacr.org/2022/1368.pdf"
-				>a lattice based function commitment</a
-			> to verify FHE. Work includes expanding on the function commitment to support operations over
-			matrices of polynomial ring elements. The work also gives a concrete instantiation of verifiable
-			leveled FHE using Torus FHE. To my knowledge, this is the first non-trusted hardware scheme which
-			is secure against decryption failure oracle attacks.
+			Transformers have taken the world by storm recently. However, they are not without their flaws. Specifically, proving any 
+			general statement, even when restricting to a specific model, is quite challenging. We are leveraging existing work on
+			robustness in attempt to show that for specific restrictions of the input, the transformer becomes less expressive.
+		</p>
+	</div>
+	<div class="research-item">
+		<h2>Towards Practical Weight Reduction for Quantum Error Correcting Codes</h2>
+		<p>
+			Good quantum error correcting codes often have high weight stabilizer. This results in more expensive measurements and as such, a higher effective error rate.
+			Starting with <a href="https://arxiv.org/abs/2102.10030">Hasting's work</a>, we are working towards a method for weight reduction with less overhead.
+			We currently have minor positive results for sub-steps in weight reduction.
 		</p>
 	</div>
 </div>
@@ -33,35 +38,12 @@
 
 <div class="text-column">
 	<h1>Research Being Wrapped Up</h1>
+
 	<div class="research-item">
-		<h2>Machine Learning to Create Better Quantum Codes</h2>
-		<img
-			src="https://img.shields.io/badge/Supported%20By-UNITARY%20FUND-brightgreen.svg?style=for-the-badge"
-			alt="Unitary Fund Badge"
-		/>
+		<h2>Multiparty Secret Leader Election</h2>
 		<p>
-			Received a grant from the Unitary Fund to use machine learning to discover better Quantum LDPC
-			codes. Work focused on finding better <a
-				href="https://iopscience.iop.org/article/10.1088/2058-9565/aac64e#:~:text=Abstract,to%20fix%20the%20code%20distance."
-				>coherent parity check codes.</a
-			>
-			Both reinforcement learning and deep learning based combinatorial optimization techniques were
-			used. Unfortunately, learned codes performed no better than sampling ~100 random codes and using
-			the best ones. A postmortem blogpost is soon to come.
-		</p>
-	</div>
-	<div class="research-item">
-		<h2>Quantum Error Correction, Hypergraph Product Codes, and Small Cycle Flip</h2>
-		<p>
-			Working with Anirudh Krishna and Michael Beverland to improve speed and decrease word error
-			rates for
-			<a href="https://arxiv.org/abs/1504.00822"
-				>hypergraph product codes (also known as quantum expander codes).</a
-			>
-			We are wrapping up research and data suggests that we have achieved an order of magnitude decrease
-			in word error rates when using a novel post-decoder for the
-			<a href="https://arxiv.org/abs/1504.00822">Small Set Flip algorithm (SSF)</a>. We also
-			introduce provably correct algorithmic changes which speed up the SSF decoder by 10-100x.
+			Work done while at the Ethereum Foundation with Mark Simkin to improve communication cost of secret leader election for multiple leaders.
+			The work resulted in a novel data independent and oblivious priority queue.
 		</p>
 	</div>
 </div>
@@ -71,14 +53,27 @@
 <div class="text-column">
 	<h1>Past Research</h1>
 	<div class="research-item">
+		<h2>Addressing Stopping Failures for Small Set Flip Decoding of Hypergraph Product Codes</h2>
+		<p>
+			Work done with Anirudh Krishna and Michael Beverland to improve speed and decrease word error
+			rates for
+			<a href="https://arxiv.org/abs/1504.00822"
+				>hypergraph product codes (also known as quantum expander codes).</a
+			>
+			Work had an order of magnitude improvement in decoding rates and speed. The paper was presented
+			at a poster in QIP 2024. The paper can be found on
+			<a href="https://arxiv.org/pdf/2311.00877.pdf">arXiv</a>.
+		</p>
+	</div>
+	<div class="research-item">
 		<h2>Weighted Secret Sharing from the Wiretap Channel</h2>
 		<p>
 			With Fabrice Benhamouda and Shai Halevi, we introduced a novel connection between weighted
 			secret sharing and wiretap channels. Achieving a ramped weighted secret sharing scheme, we
-			eliminate dependence on the number of parties and use little public information. <a
-				href="https://eprint.iacr.org/2022/1578">The preprint</a
-			>
-			can be found on ePrint.
+			eliminate dependence on the number of parties and use little public information. The paper was
+			presented at Information-Theoretic Cryptography (ITC) 2023 and the paper can be found on <a
+				href="https://eprint.iacr.org/2022/1578.pdf">ePrint</a
+			>.
 		</p>
 	</div>
 	<div class="research-item">

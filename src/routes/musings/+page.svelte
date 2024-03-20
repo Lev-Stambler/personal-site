@@ -20,6 +20,7 @@
 	{/each} -->
 	{#each posts as post}
 		<BlogCard {post} />
+		<br />
 	{/each}
 </div>
 

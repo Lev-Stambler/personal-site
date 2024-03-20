@@ -1,6 +1,6 @@
 <script lang="typescript">
 	// Declare the page variable to use on the client
-	export let data: any;
+	export let data;
 	const { page, title } = data;
 	console.log(data);
 </script>
