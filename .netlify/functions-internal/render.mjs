@@ -6,7 +6,7 @@ export const handler = init({
 	assets: new Set(["blog/lean-scratch.png","blog/warrant.webp","favicon.png","robots.txt"]),
 	mimeTypes: {".png":"image/png",".webp":"image/webp",".txt":"text/plain"},
 	_: {
-		entry: {"file":"_app/immutable/start-BdUyfSlk.js","imports":["_app/immutable/start-BdUyfSlk.js","_app/immutable/chunks/index-Bp98s2DX.js","_app/immutable/chunks/singletons-IspQAQPi.js"],"stylesheets":[],"fonts":[]},
+		entry: {"file":"_app/immutable/start-CuqSnLxV.js","imports":["_app/immutable/start-CuqSnLxV.js","_app/immutable/chunks/index-Bp98s2DX.js","_app/immutable/chunks/singletons-IspQAQPi.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			() => import('../server/nodes/0.js'),
 			() => import('../server/nodes/1.js'),

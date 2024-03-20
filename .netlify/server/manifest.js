@@ -4,7 +4,7 @@ export const manifest = {
 	assets: new Set(["blog/lean-scratch.png","blog/warrant.webp","favicon.png","robots.txt"]),
 	mimeTypes: {".png":"image/png",".webp":"image/webp",".txt":"text/plain"},
 	_: {
-		entry: {"file":"_app/immutable/start-BdUyfSlk.js","imports":["_app/immutable/start-BdUyfSlk.js","_app/immutable/chunks/index-Bp98s2DX.js","_app/immutable/chunks/singletons-IspQAQPi.js"],"stylesheets":[],"fonts":[]},
+		entry: {"file":"_app/immutable/start-CuqSnLxV.js","imports":["_app/immutable/start-CuqSnLxV.js","_app/immutable/chunks/index-Bp98s2DX.js","_app/immutable/chunks/singletons-IspQAQPi.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),
