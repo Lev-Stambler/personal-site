@@ -32,5 +32,8 @@
 		"typescript": "^5.4.2",
 		"vite": "^5.1.6"
 	},
+	"engines": {
+  "node": "^20"
+},
 	"type": "module"
 }
