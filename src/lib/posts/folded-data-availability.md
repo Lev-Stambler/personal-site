@@ -32,7 +32,7 @@ Instead, we need Alice to leverage randomness. Now, Alice can ask Bob to provide
 ## Folding for Data Availability at a Glance
 Remark: Check out this [great blog post](https://blog.zk.link/nova-studies-i-exploring-aggregation-recursion-and-folding-23b9a67000cd) for an introduction to folding.
 
-For simplicity, we will think about non-zero knowledge SNARKS (i.e. they do not preserve secrecy). In general, a SNARK can be thought of as consisting of a witness (which we will refer to as $W$), a public input, $I$, a public output, $O$ and a circuit $C$. Though often not framed in these terms, we can think of a SNARK as a proof that the circuit $C$ with inputs $W$ and $I$ returns back the public output $O$.
+For simplicity, we will think about non-zero knowledge SNARKS (i.e. they do not preserve secrecy). In general, a SNARK can be thought of as consisting of a witness (which we will refer to as $$W$$), a public input, $I$, a public output, $O$ and a circuit $C$. Though often not framed in these terms, we can think of a SNARK as a proof that the circuit $C$ with inputs $W$ and $I$ returns back the public output $O$.
 
 <!-- For our purposes, we can think of folding as doing a sort of *iteration* over a circuit. We will iterate the circuit for a number of rounds, $r$, and at each round, we update some running proof state. For round $i$, the update will prove that given the output from the last run, $O_{i - 1}$, as the new public input $I_i$ and witness $W_i$, then $C(W_i, O_{i - 1}) = O_i$. Moreover, this proof will be "combined" with the proof from the previous round to produce a new proof for the current round.
 

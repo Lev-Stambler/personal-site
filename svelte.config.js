@@ -1,9 +1,14 @@
 // import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-netlify';
-import rehypeKatex from 'rehype-katex'
-import remark from 'remark-math'
+import rehypeKatex from 'rehype-katex';
+import remarkParse from 'remark-parse';
+import remark from 'remark-math';
+import remarkRehype from 'remark-rehype';
+import rehypeStringify from 'rehype-stringify';
 import { mdsvex } from 'mdsvex';
+import rehypeKatexSvelte from 'rehype-katex-svelte';
+import remarkMath from 'remark-math';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,8 +19,17 @@ const config = {
 	preprocess: [
 		mdsvex({
 			extensions: ['.md', '.svx'],
-			rehypePlugins: [rehypeKatex],
-			remarkPlugins: [remark]
+			remarkPlugins: [remarkMath],
+			rehypePlugins: [
+				rehypeKatexSvelte,
+				{
+					macros: {
+						'\\CC': '\\mathbb{C}',
+						'\\vec': '\\mathbf'
+					}
+				}
+				/* other rehype plugins... */
+			]
 		}),
 		preprocess()
 	],
