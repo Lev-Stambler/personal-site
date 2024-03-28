@@ -35,5 +35,9 @@
 	"engines": {
 		"node": "^20"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"rehype-katex": "^7.0.0",
+		"remark-math": "^6.0.0"
+	}
 }
