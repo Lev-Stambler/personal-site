@@ -1,6 +1,6 @@
-import { _ as __vite_glob_0_0 } from "../../../chunks/post-theorem-prover.js";
+import { _ as __vite_glob_0_0, a as __vite_glob_0_1 } from "../../../chunks/post-theorem-prover.js";
 import { e as error } from "../../../chunks/index.js";
-const imports = /* @__PURE__ */ Object.assign({ "../../lib/posts/post-theorem-prover.md": __vite_glob_0_0 });
+const imports = /* @__PURE__ */ Object.assign({ "../../lib/posts/folded-data-availability.md": __vite_glob_0_0, "../../lib/posts/post-theorem-prover.md": __vite_glob_0_1 });
 const posts = [];
 for (const path in imports) {
   const post = imports[path];

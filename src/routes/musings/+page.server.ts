@@ -17,16 +17,16 @@ for (const path in imports) {
 	}
 }
 
-// Filter the post and order them by published date
-const filteredPosts = posts
-	.filter((post) => !post.hidden)
-	.sort((a, b) =>
-		new Date(a.date).getTime() > new Date(b.date).getTime()
-			? -1
-			: new Date(a.date).getTime() < new Date(b.date).getTime()
-			? 1
-			: 0
-	);
+// // Filter the post and order them by published date
+// const filteredPosts = posts
+// 	.filter((post) => !post.hidden)
+// 	.sort((a, b) =>
+// 		new Date(a.date).getTime() > new Date(b.date).getTime()
+// 			? -1
+// 			: new Date(a.date).getTime() < new Date(b.date).getTime()
+// 			? 1
+// 			: 0
+// 	);
 
 // Expose this info to other files
 // export filteredPosts;
