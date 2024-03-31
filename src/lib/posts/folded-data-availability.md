@@ -106,6 +106,12 @@ The last chunk's output is the hash of the entire block.
 </center>
 
 All the blocks are then hashed together in a tree-like structure to produce the final hash. The "hash function" here is the compression function.
+We then get a hash algorithm which looks something like the following diagram:
+<center>
+<!-- https://q.uiver.app/#q=WzAsNyxbMCw0LCJcXHRleHR7QmxvY2t9XzAiXSxbMiwyLCJUXzAgPSBGKFxcdGV4dHtCbG9ja31fMCBcXG1pZCBcXG1pZCBcXHRleHR7QmxvY2t9XzEpIl0sWzMsNCwiXFx0ZXh0e0Jsb2NrfV8xIl0sWzUsNCwiXFx0ZXh0e0Jsb2NrfV8yIl0sWzYsMiwiVF8xID0gRihcXHRleHR7QmxvY2t9XzAgXFxtaWQgXFxtaWQgXFx0ZXh0e0Jsb2NrfV8xKSJdLFs3LDQsIlxcdGV4dHtCbG9ja31fMyJdLFs0LDAsIkgoXFx0ZXh0e2RhdGF9KSA9IEYoVF8wIFxcbWlkIFxcbWlkIFRfMSkiXSxbMCwxXSxbMiwxXSxbMyw0XSxbNSw0XSxbMSw2XSxbNCw2XV0= -->
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNyxbMCw0LCJcXHRleHR7QmxvY2t9XzAiXSxbMiwyLCJUXzAgPSBGKFxcdGV4dHtCbG9ja31fMCBcXG1pZCBcXG1pZCBcXHRleHR7QmxvY2t9XzEpIl0sWzMsNCwiXFx0ZXh0e0Jsb2NrfV8xIl0sWzUsNCwiXFx0ZXh0e0Jsb2NrfV8yIl0sWzYsMiwiVF8xID0gRihcXHRleHR7QmxvY2t9XzAgXFxtaWQgXFxtaWQgXFx0ZXh0e0Jsb2NrfV8xKSJdLFs3LDQsIlxcdGV4dHtCbG9ja31fMyJdLFs0LDAsIkgoXFx0ZXh0e2RhdGF9KSA9IEYoVF8wIFxcbWlkIFxcbWlkIFRfMSkiXSxbMCwxXSxbMiwxXSxbMyw0XSxbNSw0XSxbMSw2XSxbNCw2XV0=&embed" width="1960" height="688" style="border-radius: 8px; border: none; zoom: 0.6; margin-left:-6rem"></iframe>
+<em>Here H(data) is the output of the <b>Blake3 hash function on the data</b>. Block0, Block1, etc. are the outputs of the compression function on a block of data as in the previous diagram.</em>
+</center>
 
 ## Putting it All Together
 
