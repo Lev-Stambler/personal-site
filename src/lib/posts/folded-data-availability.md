@@ -28,7 +28,7 @@ At a high level, the Blake3 hash function has an in-built Merkle-tree like mecha
 
 However, the folding technique can allows us to quickly generate proofs _in parallel_ for individual hash verifications in the tree and then combine them to produce the final proof. Unfortunately, at the time of writing this post, the parallelism in the folding technique is not yet implemented in the proof systems.
 
-## Data Availability Proofs at a Glance
+# Data Availability Proofs at a Glance
 
 Data availability proofs are a crucial component of distributed systems. They are used to ensure that data is available to all participants in the system. In the context of blockchains, data availability proofs are used to ensure that all participants have access to the data that is being stored on the blockchain.
 
@@ -53,7 +53,7 @@ By what now? We do not get a data-availability scheme by simply having a Merkle 
 
 Instead, we need Alice to leverage randomness. Now, Alice can ask Bob to provide a path from a _random_ leaf to the root. Bob cannot simply store the path from one leaf to the root and throw out the remaining data. If he does this, he will be caught out when Alice asks for a path from a different leaf to the root. Bob must store all the paths from all the leaves to the root.
 
-## Folding at a Glance
+# Folding at a Glance
 
 Remark: Check out this [great blog post](https://blog.zk.link/nova-studies-i-exploring-aggregation-recursion-and-folding-23b9a67000cd) for an introduction to folding.
 
@@ -77,7 +77,7 @@ The magic of folding is that each round's proof can be produced in parallel and 
 </div>
 </center>
 
-## Blake3
+# Blake3
 
 The [Blake3 hash function](https://github.com/BLAKE3-team/BLAKE3) is surprisingly suited for folding. Not only does it use a Merkle-tree like structure to hash large amounts of data, but the inner-workings of the hash function can be broken up for folding in a natural way.
 
@@ -113,7 +113,7 @@ We then get a hash algorithm which looks something like the following diagram:
 <em>Here H(data) is the output of the <b>Blake3 hash function on the data</b>. Block0, Block1, etc. are the outputs of the compression function on a block of data as in the previous diagram.</em>
 </center>
 
-## Putting it All Together
+# Putting it All Together
 
 Now we are cooking 🍳! We have review all the building blocks of how to do data-availability with folding. The idea is that our circuit is going to be the "compression function" of Blake3 as well as some extra logic to handle whether we are chaining together compression functions (as when hashing 1 block) or hashing multiple blocks together into a tree.
 
@@ -122,12 +122,38 @@ we will have approximately $16 + D$ rounds of folding where $D = \log_2(\text{nu
 For the first 16 rounds, the prover shows knowledge of the block. I.e. the proof verifies that $H(\text{block}) = \text{hash}$ where $H$ is the hash function and $\text{hash}$ is the hash of the block. For the remaining $D$ rounds, the prover shows knowledge of a Merkle path from the block to the root of the tree.
 
 #### The First $16$ Rounds
+Notice anything similiar about the two diagrams bellow? (The first is the diagram we used to explain folding and the second for the Blake3 hash function for one block)
+<center>
+<div>
+<br />
+<br />
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsOSxbMSwxLCJGIl0sWzMsMSwiRiJdLFs1LDEsIlxcZG90cyJdLFsxLDAsIm1fMCJdLFszLDAsIm1fMSJdLFswLDEsIlxcdGV4dHtGaXhlZCBjb25zdGFudH0iXSxbNywxLCJGIl0sWzcsMCwibV97MTV9Il0sWzksMSwiXFx0ZXh0e091dHB1dCBvZiBibG9ja30iXSxbMCwxXSxbMSwyXSxbMywwXSxbNCwxXSxbNSwwXSxbMiw2XSxbNyw2XSxbNiw4XV0=&embed" width="1617" height="304" style="border-radius: 8px; border: none; zoom: 0.5; margin-left: -2rem"></iframe>
+<iframe class="quiver-embed" src="https://q.uiver.app/#q=WzAsNyxbMSwxLCJcXG1hdGhiZntDfSJdLFszLDEsIlxcbWF0aGJme0N9Il0sWzIsMiwiXFxwaV8wIFxcdGV4dHsgZm9yIH0gQyhXXzAsIElfMCkgPSBPXzAiXSxbNCwyLCJcXHBpXzEgXFx0ZXh0eyBmb3IgfSBDKFdfMSwgQyhXXzAsIElfMCkpID0gT18wIl0sWzEsMCwiV18wIl0sWzMsMCwiV18xIl0sWzAsMSwiSV8wIl0sWzAsMSwiT18wLyBJXzEiXSxbMCwyLCIiLDIseyJjdXJ2ZSI6LTF9XSxbNCwwXSxbMSwzLCIiLDIseyJjdXJ2ZSI6LTF9XSxbNSwxXSxbNiwwXV0=&embed" width="1254" height="432" style="border-radius: 8px; border: none; zoom: 0.5"></iframe>
+</div>
+</center>
 
-For each round, $i \in \{1\dots 16\}$, the prover uses witness $\text{chunk}_i$ where $\text{chunk}_i$ is the $i$-th chunk of the block. The public input is the index of the block, a 256-bit string, the current chunk index, as well as a few flags to keep track of the fact that we are in the first 16 rounds. The output is the hash of chunks $1$ through $i$. The output of each round is fed into the next round as the 26-bit string and used as a bit key. This usage requires a little bit of extra logic within the circuit $C$ to handle the fact that the bit key is actually fixed when using the compression function for tree hashing.
+Exactly! Folding fits almost perfectly with the structure of the Blake3 hash function where message chunks $m_i$ are the witnesses $W_i$.
+
+For each round, $i \in \{1\dots 16\}$, the prover uses witness $\text{chunk}_i$ where $\text{chunk}_i$ is the $i$-th chunk of the block. The public input is the index of the block, a 256-bit string as well as a few flags to keep track of where we are in the hashing. The output is the hash of chunks $1$ through $i$. The output of each round is fed into the next round as the 26-bit string and used as a bit key. 
+
+TODO: style details a bit better in global style
+<details>
+<summary>Extra complication with circuit</summary>
+<br />
+As an aside, this usage requires a little bit of extra logic within the circuit to handle the fact that the bit key is actually fixed when using the compression function for tree hashing.
+</details>
 
 #### The Remaining $D - 1$ Rounds
 
 The remaining rounds are used to prove knowledge of a Merkle path from the block's hash to the root of the tree. The circuit and input are similar to the first 16 rounds, but the flags are different. Now, the witness is the _sibling hash_ to each node in the path. The 256-bit string input is now used as input to the compression function rather than as a bit key. The output of the circuit is the hash of the block and the sibling hashes.
+
+Diagramatically, this can be thought of as folding over one path in the Blake3 hash function's tree. For example, if we are trying to prove knowledge of the 1st block in a tree with 4 blocks, the folding be down over the circled path in the following diagram:
+
+<center>
+<div class="crop" style='overflow: hidden'>
+	<img src="/blog/folded-data-avail/treescreenshot.png" alt="A diagram of the folding process for a data availability proof." style="width: min(1000px, 80%); margin: -2px 0px 0 0px;"/>
+</div>
+</center>
 
 ### The Final Proof
 
