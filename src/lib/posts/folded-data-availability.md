@@ -7,6 +7,12 @@ tags: [Cryptography, Blockchain, Distributed Systems]
 imgSrc: /blog/warrant.webp
 ---
 
+<style>
+	h2 {
+		text-align: left;
+	}
+</style>
+
 # Folding for Data Availability: Fun for All Sizes
 
 Data availability proofs are ubiquitous in distributed systems: especially in blockchains, where they are used to both authenticate data-blobs and prove data-storage. (TODO places used ref)
@@ -28,7 +34,7 @@ At a high level, the Blake3 hash function has an in-built Merkle-tree like mecha
 
 However, the folding technique can allows us to quickly generate proofs _in parallel_ for individual hash verifications in the tree and then combine them to produce the final proof. Unfortunately, at the time of writing this post, the parallelism in the folding technique is not yet implemented in the proof systems.
 
-# Data Availability Proofs at a Glance
+## Data Availability Proofs at a Glance
 
 Data availability proofs are a crucial component of distributed systems. They are used to ensure that data is available to all participants in the system. In the context of blockchains, data availability proofs are used to ensure that all participants have access to the data that is being stored on the blockchain.
 
@@ -53,7 +59,7 @@ By what now? We do not get a data-availability scheme by simply having a Merkle 
 
 Instead, we need Alice to leverage randomness. Now, Alice can ask Bob to provide a path from a _random_ leaf to the root. Bob cannot simply store the path from one leaf to the root and throw out the remaining data. If he does this, he will be caught out when Alice asks for a path from a different leaf to the root. Bob must store all the paths from all the leaves to the root.
 
-# Folding at a Glance
+## Folding at a Glance
 
 Remark: Check out this [great blog post](https://blog.zk.link/nova-studies-i-exploring-aggregation-recursion-and-folding-23b9a67000cd) for an introduction to folding.
 
