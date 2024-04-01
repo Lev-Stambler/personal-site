@@ -2,7 +2,7 @@
 slug: folding-data-available
 title: Folding for Data Availability; Fun for All Sizes
 date: 2024-03-26
-excerpt: 'TODO:'
+excerpt: 'In this post, we will explore a new technique for generating data availability proofs, primarily leveraging cryptographic folding and the Blake3 hash function.'
 tags: [Cryptography, Blockchain, Distributed Systems]
 imgSrc: /blog/warrant.webp
 ---
@@ -11,34 +11,43 @@ imgSrc: /blog/warrant.webp
 	h2 {
 		text-align: left;
 	}
+	details {
+		/* border: black 1px solid; padding: 1rem; */
+		padding: 1rem;
+		background-color: #fff0dd;
+	}
+
+	li {
+		padding: 0.4rem;
+	}
+
 </style>
 
 # Folding for Data Availability: Fun for All Sizes
 
-Data availability proofs are ubiquitous in distributed systems: especially in blockchains, where they are used to both authenticate data-blobs and prove data-storage. (TODO places used ref)
+Data availability proofs are pivotal in distributed systems, particularly in blockchains, where they authenticate data blobs and prove data storage. While Filecoin, Ethereum light clients, and rollups all rely on these proofs, current solutions often fall short. 
 
-Current solutions for data availability proofs are based on Merkle trees and have one of the following drawbacks:
+Existing solutions often employ variants of Merkle trees or variants, such as Verkle trees. Much work has been done to improve the practicallity of data-availability solutions at scale. Still, current solutions for large files often suffer from one of the following issues:
 
-- They require a large number of constraints to generate a proof and as such are computationally expensive.
-- They require usage of newer, algebraic hash functions which have not stood the test of time.
+- The proofs are large
+- To make the proofs smaller, expensive and slow techniques are employed (I.e. using a SNARK to prove the tree path)
+- To make the compression techniques less expensive, newer, algebriac hash function are used. These hash function have not stood the test of time (i.e. the Poisiden hash function)
 
-So, can we get around both issues? The answer seems to be yes!
+So, can we get around these issues? Would it be possible to use a compression technique without using an algebriac hash function? The answer seems to be yes!
 
-In this post, we will explore a new technique for generating data availability proofs, primarily leveraging cryptographic folding and the Blake3 hash function. Folding is the new kid on the block in the world of recursive proving and proof carrying data (TODO: sources here).
+In this post, we will explore a new technique for generating data availability proofs, primarily leveraging cryptographic folding and the Blake3 hash function.
 
 ## A Brief Introduction
 
-_Remark:_ If the introduction is too terse, feel free to skip it and move to the next section.
+At a high level, the Blake3 hash function has an in-built Merkle-tree like mechanism to produce a hash of a large amount of data. So, to produce a data-availability proof, we simply need to generate a proof of knowledge from a random leaf to the root. For anyone familiar with Merkle trees, producing a proof requires verifying $O( \log N)$ hashes where $N$ is the number of leaves in the tree. Even though the scaling is relatively efficient, there is still a significant overhead in terms of number of constraints in real-world proving systems.
 
-At a high level, the Blake3 hash function has an in-built Merkle-tree like mechanism to produce a hash of a large amount of data. So, to produce a data-availability proof, we simply need to generate a proof of knowledge from a random leaf to the root (TODO: maybe explain better). For anyone familiar with Merkle trees, producing a proof requires verifying $O( \log N)$ hashes where $N$ is the number of leaves in the tree. Even though the scaling is relatively efficient, there is still a significant overhead in terms of number of constraints in real-world proving systems.
-
-However, the folding technique can allows us to quickly generate proofs _in parallel_ for individual hash verifications in the tree and then combine them to produce the final proof. Unfortunately, at the time of writing this post, the parallelism in the folding technique is not yet implemented in the proof systems.
+However, the folding technique can allows us to quickly generate proofs _in parallel_ for individual hash verifications in the tree and then combine them to produce the final proof. Unfortunately, at the time of writing this post, the parallelism in the folding technique is not yet implemented in the proof systems. Nontheless, folding allows for simpler circuits for proving.
 
 ## Data Availability Proofs at a Glance
 
 Data availability proofs are a crucial component of distributed systems. They are used to ensure that data is available to all participants in the system. In the context of blockchains, data availability proofs are used to ensure that all participants have access to the data that is being stored on the blockchain.
 
-Though there are multiple schemes, we will focus in on Merkle-tree based approaches. In a Merkle tree, data is stored in the leaves of the tree each inner node's value is the hash of its children. By the magic of collision resistance and cryptography, we can expect that any party which can provide a _valid_ path from a leaf to the root of the tree must be providing the _originally_ hashed data. In other words, it is (cryptographically) impossible to cheat and come up with a path which yields the same root hash but is not the original data.
+Though there are multiple ways to instantiate data availablity proofs, we will focus in on Merkle-tree based approaches. In a Merkle tree, data is stored in the leaves of the tree each inner node's value is the hash of its children. By the magic of collision resistance and cryptography, we can expect that any party which can provide a _valid_ path from a leaf to the root of the tree must be providing the _originally_ hashed data. In other words, it is (cryptographically) impossible to cheat and come up with a path which yields the same root hash but is not the original data.
 
 <center>
 <p>
@@ -55,17 +64,17 @@ Though there are multiple schemes, we will focus in on Merkle-tree based approac
 </p>
 </center>
 
-By what now? We do not get a data-availability scheme by simply having a Merkle tree. Indeed, imagine that for Bob to prove to Alice that he has the data, he must provide any path from the leaf to the root. Bob can then simply store the path from one leaf to the root and throw out the remaining data. Bob can then provide the path to Alice and Alice will be none the wiser.
+But what now? We do not get a data-availability scheme by simply having a Merkle tree. Indeed, imagine that for Bob to prove to Alice that he has the data, he must provide any path from the leaf to the root. Bob can then simply store the path from one leaf to the root and throw out the remaining data. Bob can then provide the path to Alice and Alice will be none the wiser.
 
 Instead, we need Alice to leverage randomness. Now, Alice can ask Bob to provide a path from a _random_ leaf to the root. Bob cannot simply store the path from one leaf to the root and throw out the remaining data. If he does this, he will be caught out when Alice asks for a path from a different leaf to the root. Bob must store all the paths from all the leaves to the root.
 
 ## Folding at a Glance
 
-Remark: Check out this [great blog post](https://blog.zk.link/nova-studies-i-exploring-aggregation-recursion-and-folding-23b9a67000cd) for an introduction to folding.
+<!-- Remark: Check out this [great blog post](https://blog.zk.link/nova-studies-i-exploring-aggregation-recursion-and-folding-23b9a67000cd) for an introduction to folding. -->
 
-For simplicity, we will think about non-zero knowledge SNARKS (i.e. they do not preserve secrecy). In general, a SNARK can be thought of as consisting of a witness (which we will refer to as $$W$$), a public input, $I$, a public output, $O$ and a circuit $C$. Though often not framed in these terms, we can think of a SNARK as a proof that the circuit $C$ with inputs $W$ and $I$ returns back the public output $O$.
+For simplicity, we will think about SNARKS without the ZK part (i.e. they do not preserve secrecy). In general, a SNARK can be thought of as consisting of a witness (which we will refer to as $$W$$), a public input, $I$, a public output, $O$, and a circuit $C$. Though often not framed in these terms, we can think of a SNARK as a proof that the circuit $C$ with inputs $(W, I)$ returns back the public output $O$.
 
-For our purposes, we can think of folding as doing a sort of _iteration_ over a circuit. We will iterate the circuit for a number of rounds, $r$, and at each round, we update some running proof state. For round $i$, the update will prove that given the output from the last run, $O_{i - 1}$, as the new public input $I_i$ and witness $W_i$, then $C(W_i, O_{i - 1}) = O_i$. Moreover, this proof will be "combined" with the proof from the previous round to produce a new proof for the current round.
+For our purposes, we can think of folding as doing a sort of _iteration_ over a circuit. We will iterate the circuit for a number of rounds, $r$, and at each round, we update some running proof state. For round $i$, the update will prove that given the output from the last run, $O_{i - 1}$ and witness $W_i$, then $C(W_i, O_{i - 1}) = O_i$. Moreover, this proof will be "combined" with the proof from the previous round to produce a new proof for the current round.
 
 In other words, we have that after round $i$, the current proof proves that $C(W_i, C(W_{i - 1}, C(W_{i - 2}, \ldots C(W_0, I_0) \ldots ))) = O_i$.
 The magic of folding is that each round's proof can be produced in parallel and then combined to produce the final proof. (TODO: source)
@@ -82,6 +91,7 @@ The magic of folding is that each round's proof can be produced in parallel and 
 
 </div>
 </center>
+<br />
 
 # Blake3
 
@@ -89,7 +99,7 @@ The [Blake3 hash function](https://github.com/BLAKE3-team/BLAKE3) is surprisingl
 
 The Blake3 hash function's design is a variation on the Blake2 hash function. It is designed to be fast and secure and is based off of one core building block: **the compression function**.
 
-<details style="border: black 1px solid; padding: 1rem;">
+<details style="">
 <!-- TODO: check this -->
   <summary>A Note on Definitions for the Compression Function</summary>
 	<br />
@@ -142,7 +152,7 @@ Exactly! Folding fits almost perfectly with the structure of the Blake3 hash fun
 
 For each round, $i \in \{1\dots 16\}$, the prover uses witness $\text{chunk}_i$ where $\text{chunk}_i$ is the $i$-th chunk of the block. The public input is the index of the block, a 256-bit string as well as a few flags to keep track of where we are in the hashing. The output is the hash of chunks $1$ through $i$. The output of each round is fed into the next round as the 26-bit string and used as a bit key. 
 
-TODO: style details a bit better in global style
+<!-- TODO: style details a bit better in global style -->
 <details>
 <summary>Extra complication with circuit</summary>
 <br />
@@ -165,10 +175,14 @@ Diagramatically, this can be thought of as folding over one path in the Blake3 h
 
 So, now we are left with a proof that the prover knows the block and a Merkle path from the block to the root of the tree. The proof is produced by running the circuit for each round in parallel and then combining the proofs to produce the final proof. Nice!
 
-## Follow Up Steps
+# Conclusion
+Though we still need parrallization support for folding, we are well on our way to data-availablity proofs which are both fast to generate and small in size. With some work, authenticated data structures will become easier and easier to employ in real world systems as overheads decrease.
+To keep up with progess check out the [Hot Proofs Blake3](https://github.com/banyancomputer/hot-proofs-blake3-circom/tree/main) library.
+
+<!-- ## Follow Up Steps
 
 To reap the benefits of folding here, we need to implement the parallelism in the proof system. Then, we can benchmark the folding technique against the traditional Merkle-tree based data availability proofs.
 
-Parallelization and benchmarking
+Parallelization and benchmarking -->
 
 <!-- Why no benchmarks?? -->
