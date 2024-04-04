@@ -178,11 +178,3 @@ So, now we are left with a proof that the prover knows the block and a Merkle pa
 # Conclusion
 Though we still need parrallization support for folding, we are well on our way to data-availablity proofs which are both fast to generate and small in size. With some work, authenticated data structures will become easier and easier to employ in real world systems as overheads decrease.
 To keep up with progess check out the [Hot Proofs Blake3](https://github.com/banyancomputer/hot-proofs-blake3-circom/tree/main) library.
-
-<!-- ## Follow Up Steps
-
-To reap the benefits of folding here, we need to implement the parallelism in the proof system. Then, we can benchmark the folding technique against the traditional Merkle-tree based data availability proofs.
-
-Parallelization and benchmarking -->
-
-<!-- Why no benchmarks?? -->
