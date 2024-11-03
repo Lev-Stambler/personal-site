@@ -20,7 +20,7 @@
 			<li>I like to learn</li>
 			<li>I like to code</li>
 			<li>I find math and theoretical computer science quite fun</li>
-			<li>I like tea</li>
+			<li>I like tea *</li>
 		</ul>
 	</div>
 	<div class="right">
