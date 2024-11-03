@@ -4,11 +4,12 @@
 </svelte:head>
 
 <div class="text-column current-research">
-	<h1>Ongoing Work</h1>
+	<h1>On a Brief Hiatus</h1>
 	<div class="research-item">
-		<h2>Helping Teams with ZK</h2>
+		<h2>Want to get in touch?</h2>
 		<p>
-			Currently, I am helping a team build a zero-knowledge protocol on top of Ethereum. More information to come.	
+			I am currently taking a break from consulting to focus on research, but I am always happy to chat.
+			For any inquiries, please reach out to me.
 		</p>
 	</div>
 
@@ -18,6 +19,15 @@
 
 <div class="text-column">
 	<h1>Past Work</h1>
+	<div class="research-item">
+		<h2>ZK-SNARKS + Folding + Sponge (and Merkle-Damgard) Construction Hash Functions</h2>
+		<p>
+			For a startup, I implemented the Blake-3 hash function using folding (<a href="https://github.com/microsoft/Nova">Nova</a>) and Circom.
+			The Blake-3 hash function is a cryptographic hash function that is optimized for speed and security by combining a sponge and Merkle-Damgard construction.
+			I wrote a <a href="/musings/folding-data-available">blog post</a> about the implementation and idea.
+		</p>
+	</div>
+
 	<div class="research-item">
 		<h2>Private Playable Game Character</h2>
 		<p>

@@ -5,40 +5,36 @@
 
 <div class="text-column current-research">
 	<h1>Current Research Project</h1>
-	<!-- <div class="research-item">
-		<h2>Thinking About</h2>
-		<p>
-			Working on modifying <a href="https://eprint.iacr.org/2022/1368.pdf"
-				>a lattice based function commitment</a
-			> to verify FHE. Work includes expanding on the function commitment to support operations over
-			matrices of polynomial ring elements. Then, the paper gives a concrete instantiation of verifiable
-			leveled FHE using Torus FHE. To my knowledge, this is the first non-trusted hardware scheme which
-			is secure against decryption failure oracle attacks.
-		</p>
-	</div> -->
 	<div class="research-item">
-		<h2>Dictator Restrictions for Transformers</h2>
+		<h2>Depth Bounded Quantum Cryptography</h2>
+		<p>
+			Quantum cryptography is a powerful tool for secure communication. However, it is not without its limitations in the ideal model.
+			We are exploring how quantum cryptography can be <b>more powerful</b> in the a somewhat <b>realistic</b> model where the adversary has limited quantum resources.
+		</p>
+	</div>
+	<div class="research-item">
+		<h2>Formal Proofs for Transformers</h2>
 		<p>
 			Transformers have taken the world by storm recently. However, they are not without their flaws. Specifically, proving any 
-			general statement, even when restricting to a specific model, is quite challenging. We are leveraging existing work on
-			robustness in attempt to show that for specific restrictions of the input, the transformer becomes less expressive.
+			general statement, even when restricting to a specific model, is quite challenging. We are leveraging existing work 
+			and new techniques to prove formal statements about the behavior of specific transformers given their weights.
 		</p>
 	</div>
-	<div class="research-item">
-		<h2>Towards Practical Weight Reduction for Quantum Error Correcting Codes</h2>
-		<p>
-			Good quantum error correcting codes often have high weight stabilizer. This results in more expensive measurements and as such, a higher effective error rate.
-			Starting with <a href="https://arxiv.org/abs/2102.10030">Hasting's work</a>, we are working towards a method for weight reduction with less overhead.
-			We currently have minor positive results for sub-steps in weight reduction.
-		</p>
 	</div>
-</div>
 
 <hr />
 
-<div class="text-column">
-	<h1>Research Being Wrapped Up</h1>
 
+<div class="text-column">
+	<h1>Past Research</h1>
+	<div class="research-item">
+		<h2>Effective Distance Preservation of Weight Reduced Codes and Higher Dim HGPs</h2>
+		<p>
+			Good quantum error correcting codes often have high weight stabilizer. This results in more expensive measurements and as such, a higher effective error rate.
+			Starting with <a href="https://arxiv.org/abs/2102.10030">Hasting's work</a>, we show effective distance preservation for weight reduced codes and higher dimensional hypergraph product codes.
+			See the paper on <a href="https://arxiv.org/pdf/2409.02193">arXiv</a>.
+		</p>
+	</div>
 	<div class="research-item">
 		<h2>Multiparty Secret Leader Election</h2>
 		<p>
@@ -46,19 +42,17 @@
 			The work resulted in a novel data independent and oblivious priority queue.
 		</p>
 	</div>
-</div>
 
-<hr />
 
-<div class="text-column">
-	<h1>Past Research</h1>
+
+
 	<div class="research-item">
 		<h2>Addressing Stopping Failures for Small Set Flip Decoding of Hypergraph Product Codes</h2>
 		<p>
 			Work done with Anirudh Krishna and Michael Beverland to improve speed and decrease word error
 			rates for
 			<a href="https://arxiv.org/abs/1504.00822"
-				>hypergraph product codes (also known as quantum expander codes).</a
+      >hypergraph product codes (also known as quantum expander codes).</a
 			>
 			Work had an order of magnitude improvement in decoding rates and speed. The paper was presented
 			at a poster in QIP 2024. The paper can be found on
@@ -72,8 +66,8 @@
 			secret sharing and wiretap channels. Achieving a ramped weighted secret sharing scheme, we
 			eliminate dependence on the number of parties and use little public information. The paper was
 			presented at Information-Theoretic Cryptography (ITC) 2023 and the paper can be found on <a
-				href="https://eprint.iacr.org/2022/1578.pdf">ePrint</a
-			>.
+												    href="https://eprint.iacr.org/2022/1578.pdf">ePrint</a
+											    >.
 		</p>
 	</div>
 	<div class="research-item">
@@ -83,16 +77,16 @@
 			rational numbers will form a closed path. Surprisingly, the question of closure is initmatly
 			connected to discrete logs and roots of a very specific multinomial with coefficients of +/-
 			1. The paper can be found on <a
-				href="https://github.com/Lev-Stambler/3D-Turtles/blob/master/paper/Paper.pdf">Github</a
-			>. With a friend <a href="https://www.shivaperi.com/">(Shiva Peri)</a>, we also created a
-			visualization which creates some rather beautiful shapes. We also posted an
-			<a href="https://3dturtles.groked.co/">interactive website</a> to play around with parameters.
+					href="https://github.com/Lev-Stambler/3D-Turtles/blob/master/paper/Paper.pdf">Github</a
+				>. With a friend <a href="https://www.shivaperi.com/">(Shiva Peri)</a>, we also created a
+				visualization which creates some rather beautiful shapes. We also posted an
+				<a href="https://3dturtles.groked.co/">interactive website</a> to play around with parameters.
 		</p>
 		<img
-			style="justify-self: center; width: 100%; padding: 0 20%; box-sizing: border-box;"
-			src="https://raw.githubusercontent.com/Lev-Stambler/3D-Turtles/master/curated-list/second.png"
-			alt=""
-		/>
+	  style="justify-self: center; width: 100%; padding: 0 20%; box-sizing: border-box;"
+   src="https://raw.githubusercontent.com/Lev-Stambler/3D-Turtles/master/curated-list/second.png"
+   alt=""
+   />
 	</div>
 </div>
 
