@@ -5,6 +5,10 @@
 	export let data;
 	let { posts } = data;
 	console.log(posts);
+	// Posts-sorted by date
+	let sortedPosts = posts.sort((a, b) => {
+		return new Date(b.date) - new Date(a.date);
+	});
 </script>
 
 <svelte:head>
@@ -13,12 +17,12 @@
 </svelte:head>
 
 <div class="text-column current-research">
-	<h1>Things I am Thinking About</h1>
+	<h1>My Blog</h1>
 	<!-- {#each musings as musing, i}
 		<h2>{i + 1}) {musing[0]}</h2>
 		{musing[1]}
 	{/each} -->
-	{#each posts as post}
+	{#each sortedPosts as post}
 		<BlogCard {post} />
 		<br />
 	{/each}
