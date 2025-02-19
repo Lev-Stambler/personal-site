@@ -2,7 +2,7 @@
 #import emoji  : checkmark
 #show: thmrules.with(qed-symbol: [#checkmark.box])
 
-#set page(width: 16cm, height: auto, margin: 1.5cm)
+#set page(width: 800pt, height: auto, margin: 1.5cm)
 #set heading(numbering: none)
 
 #let theorem = thmbox("theorem", "Theorem", fill: rgb("#eeffee")).with(numbering: none)
@@ -28,7 +28,7 @@ As a computer scientist (in training), I tend to be interested in a very specifi
 For example, ${0, 1}^n -> {0, 1}$ is a function that takes in a binary string of length $n$ and outputs a single bit.
 
 
-Though in this quick post, we will be discussing, *exponentially sized* sets, we will get a really interesting and _unexpected_ result about a very common class of functions!
+In this quick post, we will be discussing, *exponentially sized* sets, we will get a really interesting and _unexpected_ result about a very common class of functions!
 
 
 == The Class of Functions $F(x, y)$
@@ -83,4 +83,4 @@ I am not entirely sure, but I think it is a good reminder that even the most sim
 
 = Some Maybe Interesting Questions
 + If $f$ is some polynomial time computable function, can we find a set $S$ with $|S| >= k$ such that $f(a, b) != y$ for all $a, b in S$? How much time would it take to find such a set? Can we do better than exponential time?
-+ As someone interested in cryptography, I wonder if this lemma has any implications for symmetric functions used in cryptography. For example, can we use this lemma to find a set of keys that are not related to each other in some way?
++ As someone interested in cryptography, I wonder if this lemma has any implications for symmetric functions used in cryptography. For example, can we use this lemma to find a set of keys that are not related to each other in some way? Or can does this lemma provide some insight into the security of symmetric functions?
