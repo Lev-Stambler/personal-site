@@ -1,3 +1,4 @@
+#import "commands/main_commands.typ" : *
 #import "@preview/ctheorems:1.1.3" : *
 #import emoji  : checkmark
 #show: thmrules.with(qed-symbol: [#checkmark.box])
@@ -27,8 +28,17 @@ For the most part, we normally think of Ramsey theory as a field that deals with
 As a computer scientist (in training), I tend to be interested in a very specific class of functions though: specifically functions of the form $f: X -> Y$ where $X, Y$ are _discrete_ and _finite_ sets.
 For example, ${0, 1}^n -> {0, 1}$ is a function that takes in a binary string of length $n$ and outputs a single bit.
 
-
 In this quick post, we will be discussing, *exponentially sized* sets, we will get a really interesting and _unexpected_ result about a very common class of functions!
+
+#LLMExplains(name: "Anthropic's Claude", title: "Ramsey Theory to a college student")[
+Ramsey theory, at its core, studies the emergence of order in seemingly chaotic structures. Think of it like this: if you have a large enough collection of objects and some way of relating them (like coloring them, pairing them, etc.), you're guaranteed to find some patterns or structures within that collection.
+
+A classic example is the "party problem": if you have 6 people at a party, there must be either 3 people who all know each other or 3 people who are all strangers to each other. This might seem surprising at first, but it's a fundamental result in Ramsey theory!
+
+The field gets its name from Frank P. Ramsey, who proved that in any large enough structure, you can always find well-organized substructures. For instance, if you color the edges of a large enough complete graph with a finite number of colors, you'll always find a complete subgraph whose edges are all the same color.
+
+What makes Ramsey theory fascinating is that it often deals with the question "How large is large enough?" The answers are usually surprisingly big – we might need exponentially or even astronomically large structures to guarantee the existence of relatively small ordered substructures.
+]
 
 
 == The Class of Functions $F(x, y)$
@@ -80,6 +90,19 @@ Many every day functions, such as the Diffie-Hellman key exchange, are symmetric
 
 So what does this mean for us?
 I am not entirely sure, but I think it is a good reminder that even the most simple functions can have some very interesting properties!
+
+#LLMExplains(name: "Anthropic's Claude", title: "why this is cool")[
+Let me break down why this result is surprisingly powerful and counterintuitive:
+
+Imagine you have a function that takes two inputs and gives one output, like multiplication or addition. You'd expect that if you look at enough input pairs, you'd eventually see all possible outputs, right? This lemma says something shocking - no matter how clever your function is, if you have enough inputs (exponentially many), you can always find a large set of numbers where some output value *never appears* when you pair them up!
+
+Think about multiplication mod 3: even with just the numbers 1-10, it seems like you get all possible remainders (0,1,2) when multiplying different pairs. The lemma says that with a big enough set of numbers, you can find a subset where one remainder *never shows up* when you multiply any two numbers from that subset.
+
+This is especially surprising for cryptographic functions, which are designed to have outputs that look random and unpredictable. The lemma says that even these "random-looking" functions must have large structured subsets where some output value never appears.
+
+What makes this even more mind-bending is that it works for *any* symmetric function - you don't need to know anything about how the function works internally. Just the fact that it's symmetric (f(x,y) = f(y,x)) and has a large enough input set is enough to guarantee this property exists!
+
+]
 
 = Some Maybe Interesting Questions
 + If $f$ is some polynomial time computable function, can we find a set $S$ with $|S| >= k$ such that $f(a, b) != y$ for all $a, b in S$? How much time would it take to find such a set? Can we do better than exponential time?
