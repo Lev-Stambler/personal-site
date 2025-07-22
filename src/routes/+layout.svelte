@@ -12,10 +12,7 @@
 
 	<footer>
 		<a href="https://github.com/Lev-Stambler">Github</a>
-		<a
-	  href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwibxLKEyeD7AhW5GlkFHS-fAyoQFnoECBgQAQ&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Flev-stambler-888052154"
-   >LinkedIn</a
-		>
+		<a href="https://x.com/StamblerLev">X</a>
 		<a href="mailto:lev.stambler@gmail.com">Email Me</a>
 		<p>
 			(*) If we are at the same conference, send a message for a tea break!
