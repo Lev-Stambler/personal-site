@@ -1,6 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+	import 'katex/dist/katex.min.css';
 </script>
 
 <div class="app">

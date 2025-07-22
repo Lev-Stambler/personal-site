@@ -1,5 +1,7 @@
 <script lang="ts">
 	import BlogCard from './BlogCard.svelte';
+  import { onMount } from 'svelte';
+
 
 	// const musings = [['Theorem Provers',  'Thoughts here']];
 	export let data;
@@ -9,6 +11,10 @@
 	let sortedPosts = posts.sort((a, b) => {
 		return new Date(b.date) - new Date(a.date);
 	});
+
+	onMount(() => {
+		window.MathJax.typeset()
+	})
 </script>
 
 <svelte:head>

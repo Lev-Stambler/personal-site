@@ -23,7 +23,7 @@
 		<div>
 			{new Date(post?.date || '').toDateString()}
 			<hr />
-			<p>{post?.excerpt}</p>
+			<p>{@html post?.excerpt}</p>
 		</div>
 		<img src={post?.imgSrc} alt="" />
 	</div>
