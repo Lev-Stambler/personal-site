@@ -1,0 +1,44 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define the 5 vertices in a pentagonal arrangement -->
+  <defs>
+    <circle id="vertex" r="8" fill="#333" stroke="#000" stroke-width="2"/>
+  </defs>
+  
+  <!-- Calculate vertex positions for a regular pentagon -->
+  <!-- Center at (200, 200), radius 150 -->
+  
+  <!-- Edges (10 total in K5) -->
+  <!-- Using two colors: blue (#3498db) and red (#e74c3c) -->
+  
+  <!-- Vertex 1 to others -->
+  <line x1="200" y1="50" x2="346.35" y2="161.8" stroke="#3498db" stroke-width="3"/>
+  <line x1="200" y1="50" x2="285.45" y2="336.8" stroke="#e74c3c" stroke-width="3"/>
+  <line x1="200" y1="50" x2="114.55" y2="336.8" stroke="#3498db" stroke-width="3"/>
+  <line x1="200" y1="50" x2="53.65" y2="161.8" stroke="#e74c3c" stroke-width="3"/>
+  
+  <!-- Vertex 2 to others (excluding already drawn) -->
+  <line x1="346.35" y1="161.8" x2="285.45" y2="336.8" stroke="#3498db" stroke-width="3"/>
+  <line x1="346.35" y1="161.8" x2="114.55" y2="336.8" stroke="#e74c3c" stroke-width="3"/>
+  <line x1="346.35" y1="161.8" x2="53.65" y2="161.8" stroke="#3498db" stroke-width="3"/>
+  
+  <!-- Vertex 3 to others (excluding already drawn) -->
+  <line x1="285.45" y1="336.8" x2="114.55" y2="336.8" stroke="#3498db" stroke-width="3"/>
+  <line x1="285.45" y1="336.8" x2="53.65" y2="161.8" stroke="#e74c3c" stroke-width="3"/>
+  
+  <!-- Vertex 4 to vertex 5 (last edge) -->
+  <line x1="114.55" y1="336.8" x2="53.65" y2="161.8" stroke="#3498db" stroke-width="3"/>
+  
+  <!-- Vertices -->
+  <use href="#vertex" x="200" y="50"/>
+  <use href="#vertex" x="346.35" y="161.8"/>
+  <use href="#vertex" x="285.45" y="336.8"/>
+  <use href="#vertex" x="114.55" y="336.8"/>
+  <use href="#vertex" x="53.65" y="161.8"/>
+  
+  <!-- Optional: Add vertex labels -->
+  <text x="200" y="35" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">v₁</text>
+  <text x="365" y="161.8" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">v₂</text>
+  <text x="285.45" y="360" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">v₃</text>
+  <text x="114.55" y="360" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">v₄</text>
+  <text x="35" y="161.8" text-anchor="middle" font-family="Arial" font-size="14" fill="#333">v₅</text>
+</svg>

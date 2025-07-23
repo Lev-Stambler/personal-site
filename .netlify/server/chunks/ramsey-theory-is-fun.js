@@ -139,7 +139,7 @@ const metadata = {
   "date": "2025-02-19T00:00:00.000Z",
   "excerpt": "A quick and surprising fact from Ramsey theory. For all symmetric functions $F(x, y) \\rightarrow \\mathcal{Y}$ with a reasonably sized domain, then we can find a set $S$ such that for all $x, y \\in S$, $F(x, y) \\neq \\mathcal{Y}$ of a logarithmic size (in the domain)!",
   "tags": ["Theorem Proving"],
-  "imgSrc": "/blog/lean-scratch.png"
+  "imgSrc": "/blog/ramsey.svg"
 };
 const Ramsey_theory_is_fun = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<h1>A Nice Lemma</h1>
