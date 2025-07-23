@@ -7,14 +7,14 @@
 	<meta name="description" content="Lev Stambler's Personal Site" />
 </svelte:head>
 
-<section>
-	<div class="left">
+<section style="max-width: 64rem; margin: 0 auto;">
+	<div class="left" >
 		<h1 style="text-align: left;">Hello!</h1>
 		<p>
 			My name is Lev. I am a PhD student in the University of Maryland's Computer Science Department.
 			<br />
 			<br />
-			I don't have too much to say about myself, so I will keep it brief:
+			I like to be brief:
 		</p>
 		<ul>
 			<li>I like to learn</li>

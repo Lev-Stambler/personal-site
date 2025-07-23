@@ -11,7 +11,7 @@ const BlogCard = create_ssr_component(($$result, $$props, $$bindings, slots) => 
   return `<div class="box" style="display: box;"><div class="wrapper svelte-yklg28"><h2 class="svelte-yklg28">${escape(post?.title)}</h2>
 		<div>${escape(new Date(post?.date || "").toDateString())}
 			<hr>
-			<p>${escape(post?.excerpt)}</p></div>
+			<p><!-- HTML_TAG_START -->${post?.excerpt}<!-- HTML_TAG_END --></p></div>
 		<img${add_attribute("src", post?.imgSrc, 0)} alt="" class="svelte-yklg28"></div>
 </div>`;
 });
@@ -19,13 +19,16 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { data } = $$props;
   let { posts } = data;
   console.log(posts);
+  let sortedPosts = posts.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
   if ($$props.data === void 0 && $$bindings.data && data !== void 0)
     $$bindings.data(data);
   return `${$$result.head += `<!-- HEAD_svelte-1ygwq49_START -->${$$result.title = `<title>Musings</title>`, ""}<meta name="description" content="Musings"><!-- HEAD_svelte-1ygwq49_END -->`, ""}
 
-<div class="text-column current-research"><h1>Things I am Thinking About</h1>
+<div class="text-column current-research"><h1>My Blog</h1>
 	
-	${each(posts, (post) => {
+	${each(sortedPosts, (post) => {
     return `${validate_component(BlogCard, "BlogCard").$$render($$result, { post }, {}, {})}
 		<br>`;
   })}

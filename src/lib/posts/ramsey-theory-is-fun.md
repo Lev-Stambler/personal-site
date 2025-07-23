@@ -7,6 +7,9 @@ tags: [Theorem Proving]
 imgSrc: /blog/lean-scratch.png
 ---
 
+# A Nice Lemma
 
-<iframe src="/posts/ramsey-theory-is-fun.pdf" width="100%" height="600px" title="Ramsey Theory is Fun"></iframe>
+<iframe src="/posts/ramsey-theory-is-fun.pdf" width="100%" height="600px" title="Ramsey Theory is Fun"
+  style="width: 100%; height: 100%; z-index: 100; position: relative;"
+></iframe>
 

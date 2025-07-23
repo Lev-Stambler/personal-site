@@ -1,5 +1,5 @@
 <script>
-	import Latex from "$lib/components/Latex.svelte";
+	
 </script>
 
 <svelte:head>
@@ -15,5 +15,4 @@
 	</p>
 
     I can write math, like so:
-    <Latex tex="\sum_{i=0}^n i = \frac{n(n+1)}{2}" />
 </div>
