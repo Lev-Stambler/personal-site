@@ -1,0 +1,208 @@
+/* --- Google Font Imports --- */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* --- CSS Variables for Easy Theming --- */
+:root {
+	--bg-color: #f8f9fa; /* Light grey background */
+	--font-color: #343a40; /* Dark grey text */
+	--accent-color: #007bff; /* A nice blue for accents */
+	--card-bg-color: #ffffff; /* White for the article card */
+	--card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	--font-serif: 'Lora', serif;
+	--font-sans: 'Lato', sans-serif;
+}
+
+/* --- General Body & Layout Styling --- */
+body {
+	background-color: var(--bg-color);
+	color: var(--font-color);
+	font-family: var(--font-sans);
+	line-height: 1.6;
+	margin: 0;
+	padding: 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100vh;
+	position: relative;
+	width: auto;
+}
+
+main {
+	width: 100%;
+	flex-grow: 1;
+}
+
+/* --- Header & Footer --- */
+header,
+footer {
+	text-align: center;
+	position: relative;
+	max-width: 900px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header {
+	margin-bottom: 2.5rem;
+}
+
+footer {
+	margin-top: 3rem;
+	font-size: 0.9em;
+	color: #6c757d; /* Muted text color for footer */
+}
+
+h1 {
+	font-family: var(--font-serif);
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-bottom: 0.5rem;
+}
+
+.subtitle {
+	font-style: italic;
+	color: #6c757d;
+	margin-top: 0;
+}
+
+/* --- Article & Typst Output Styling --- */
+article,
+.article {
+	max-width: 1000px;
+	background-color: var(--card-bg-color);
+	border-radius: 8px;
+	box-shadow: var(--card-shadow);
+	padding: 1rem; /* Padding around the SVG */
+}
+
+/* --- Tooltip --- */
+.typst-output {
+	display: block;
+	width: 100%; /* Makes the SVG responsive */
+	height: auto;
+	border-radius: 4px; /* Slightly rounded corners for the SVG itself */
+}
+
+.tooltip-container {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.tooltip-text {
+	display: block;
+	width: max-content;
+	max-width: 35vw;
+	background-color: #333;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	z-index: 1;
+	font-size: 0.8em;
+	padding: 1em;
+	text-align: left;
+	bottom: 125%; /* Position the tooltip above the text */
+	left: 50%;
+	margin-left: -60px; /* Center the tooltip */
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+	visibility: visible;
+	opacity: 1;
+}
+
+/* --- Theorems and the like --- */
+.theorem-body p {
+	display: inline;
+}
+
+/* --- IFrame Responsive Design --- */
+/* 1. The container for the iframe and button */
+.maximizable-iframe-container {
+	position: relative; /* Crucial for positioning the button */
+	width: 100%;
+	height: 450px;
+	border: 2px solid #ccc;
+	border-radius: 8px;
+	overflow: hidden; /* Hides parts of the button that might overflow */
+	transition: all 0.4s ease-in-out; /* Smooth animation */
+	background-color: #fff;
+}
+
+/* 2. The styles for the iframe itself */
+.maximizable-iframe-container iframe {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+/* 3. The class that triggers the "maximized" state */
+.maximizable-iframe-container.maximized {
+	position: fixed; /* Takes the element out of the document flow */
+	top: 0;
+	left: 0;
+	width: 100vw; /* 100% of viewport width */
+	height: 100vh; /* 100% of viewport height */
+	z-index: 9999; /* Ensures it's on top of all other content */
+	border: none; /* Remove border in maximized mode */
+	border-radius: 0;
+}
+
+.iframe-toggle-button,
+.iframe-back-button {
+	z-index: 10; /* Ensures button is above the iframe content */
+	padding: 8px 12px;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(2px); /* Frosted glass effect */
+	transition: background-color 0.2s;
+	top: 10px;
+}
+/* 4. The toggle button */
+.iframe-toggle-button {
+	position: absolute;
+	right: 10px;
+}
+.iframe-back-button {
+	position: absolute;
+	left: 10px;
+}
+
+.iframe-toggle-button:hover {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+svg {
+	max-width: inherit;
+	/* 
+	max-width: 100%; 
+	 * Ensures SVGs are responsive */
+}
+
+/********* Math *************/
+.theorem {
+	background-color: #9bfcbb;
+	border-radius: 1em;
+	background-color: rgb(212 255 225);
+	font-size: 1.1em;
+}
+
+.proof {
+	border-radius: 1em;
+	border-color: black;
+	border-style: dashed;
+	border-width: 1px;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin-top: 1em;
+}

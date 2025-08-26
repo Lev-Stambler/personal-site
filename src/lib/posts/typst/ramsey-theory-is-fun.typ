@@ -1,8 +1,11 @@
+#import "@local/levs-commands:1.0.0": *
 #import "@preview/ctheorems:1.1.3" : *
 #import emoji  : checkmark
-#show: thmrules.with(qed-symbol: [#checkmark.box])
+//#show: thmrules.with(qed-symbol: [#checkmark.box])
+#show: thmrules
 
-#set page(width: 16cm, height: auto, margin: 1.5cm)
+#show: htmlrules
+// #set page(width: 16cm, height: auto, margin: 1.5cm)
 #set heading(numbering: none)
 
 #let theorem = thmbox("theorem", "Theorem", fill: rgb("#eeffee")).with(numbering: none)
@@ -36,17 +39,17 @@ Let $X, Y$ be finite sets with $|X| >= 2^(k + 2)$ and $|Y| >= 3$.
 We will let $F : X times X -> Y$ be an arbitrary function as long as $F(x, y) = F(y, x)$ for all $x, y in X$.
 We call these class of functions _symmetric_ functions. (TODO: check this?)
 
-#definition[Symmetric Function][
+#definitionH(title: [Symmetric Function])[
 A function $F : X times X -> Y$ is called _symmetric_ if $F(x, y) = F(y, x)$ for all $x, y in X$.
 ]
 
 
 #heading([Cute Little Lemma for $F(x, y)$])
 
-#theorem[
+#theoremH[
 	For all $F : calX times calX -> calY$ where $F$ is a symmetric function and $|calX| >= 2^(k + 2), |calY| >= 3$, there exists a set $calS subset.eq calX$ with $|S| >= k$ and $y in Y$ such that $F(a, b) != y $ for all $a, b in calS$.
 ]
-#proof[
+#proofH[
 	The proof follows from a simple application of Ramsey's theorem for finite sets.
 	First, lets assign some index $id(y) in {1, dots, |calY|}$ for each $y in calY$.
 	Then, let $
