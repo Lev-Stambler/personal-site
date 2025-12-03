@@ -16,7 +16,7 @@
 		<a href="https://x.com/StamblerLev">X</a>
 		<a href="mailto:lev.stambler@gmail.com">Email Me</a>
 		<p>
-			(*) If we are at the same conference, send a message for a tea break!
+			<a href="/curious" class="tea-hint">(*)</a> If we are at the same conference, send a message for a tea break!
 		</p>
 
 	</footer>
@@ -56,6 +56,18 @@
 
 	footer a {
 		font-weight: bold;
+	}
+
+	footer .tea-hint {
+		color: var(--color-text);
+		font-weight: normal;
+		text-decoration: none;
+		transition: color 0.3s ease;
+	}
+
+	footer .tea-hint:hover {
+		color: var(--color-theme-2);
+		text-decoration: none;
 	}
 
 	@media (min-width: 480px) {

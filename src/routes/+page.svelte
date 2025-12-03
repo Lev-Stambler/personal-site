@@ -4,22 +4,22 @@
 
 <svelte:head>
 	<title>Lev Stambler</title>
-	<meta name="description" content="Lev Stambler's Personal Site" />
+	<meta name="description" content="Lev Stambler - Quantum Computing and AI Researcher" />
 </svelte:head>
 
 <section style="max-width: 64rem; margin: 0 auto;">
-	<div class="left" >
+	<div class="left">
 		<h1 style="text-align: left;">Hello!</h1>
 		<p>
-			My name is Lev. I am a PhD student in the University of Maryland's Computer Science Department.
-			<br />
-			<br />
-			I like to be brief:
+			I'm Lev, a PhD student at UMD researching at the intersection of
+			<span class="highlight">quantum computing</span> and <span class="highlight">AI</span>.
 		</p>
+		<p style="margin-top: 1rem;">My work spans:</p>
 		<ul>
-			<li>I like to learn</li>
-			<li>I like to code</li>
-			<li>I find math and theoretical computer science quite fun</li>
+			<li><strong>AI Safety & Interpretability</strong> — Understanding what neural networks actually learn</li>
+			<li><strong>ML Theory</strong> — Formal proofs for transformer behavior</li>
+			<li><strong>Quantum Cryptography</strong> — Security under realistic adversary models</li>
+			<li><strong>Applied AI</strong> — Building systems that work</li>
 			<li>I like tea *</li>
 		</ul>
 	</div>
@@ -29,12 +29,9 @@
 			target="blank"
 			label="3D Turtles and Exploration"
 		>
-			<img src={turtle} alt="Welcome" />
+			<img src={turtle} alt="3D Turtles visualization" />
 		</a>
-		<p>
-			The above picture is from a project which explores "drawing" rational numbers in
-			different dimensions
-		</p>
+		<p>Where theory meets creative exploration</p>
 	</div>
 </section>
 

@@ -1,63 +1,86 @@
 import { c as create_ssr_component } from "../../../chunks/hooks.js";
 const css = {
-  code: ".research-item.svelte-1ri4gue h2.svelte-1ri4gue{font-size:1.3rem}",
+  code: ".intro.svelte-1owwzaz.svelte-1owwzaz{margin-bottom:1.5rem;font-size:1.05rem}.research-item.svelte-1owwzaz.svelte-1owwzaz{margin-bottom:1.5rem}.research-item.svelte-1owwzaz h3.svelte-1owwzaz{font-size:1.2rem;margin-bottom:0.25rem;text-align:left}hr.svelte-1owwzaz.svelte-1owwzaz{margin:2rem 0;border:none;border-top:1px solid var(--color-bg-0)}",
   map: null
 };
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `${$$result.head += `<!-- HEAD_svelte-1cdcmlb_START -->${$$result.title = `<title>Research</title>`, ""}<meta name="description" content="Research"><!-- HEAD_svelte-1cdcmlb_END -->`, ""}
+  return `${$$result.head += `<!-- HEAD_svelte-1i9ytao_START -->${$$result.title = `<title>Research</title>`, ""}<meta name="description" content="Research - AI and Quantum Computing"><!-- HEAD_svelte-1i9ytao_END -->`, ""}
 
-<div class="text-column current-research"><h1>Current Research Project</h1>
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Depth Bounded Quantum Cryptography</h2>
-		<p>Quantum cryptography is a powerful tool for secure communication. However, it is not without its limitations in the ideal model.
-			We are exploring how quantum cryptography can be <b>more powerful</b> in the a somewhat <b>realistic</b> model where the adversary has limited quantum resources.
+<div class="text-column"><h1>Research</h1>
+	<p class="intro svelte-1owwzaz">I work on problems that bridge theoretical foundations with practical systems, with a focus on AI and quantum computing.
+	</p>
+
+	
+	<h2 class="section-header">AI Research</h2>
+
+	<div class="research-item svelte-1owwzaz"><h3 class="svelte-1owwzaz">Mechanistic Interpretability</h3>
+		<span class="tag">Interpretability / Safety</span>
+		<p>Developing methods to understand what neural networks learn.
+			My <a href="/musings/sensitive-features">sensitivity-based feature discovery</a> work
+			proposes alternatives to sparse autoencoders that explain feature sparsity without requiring it as an assumption.
 		</p></div>
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Formal Proofs for Transformers</h2>
-		<p>Transformers have taken the world by storm recently. However, they are not without their flaws. Specifically, proving any 
-			general statement, even when restricting to a specific model, is quite challenging. We are leveraging existing work 
-			and new techniques to prove formal statements about the behavior of specific transformers given their weights.
-		</p></div></div>
 
-<hr>
-
-
-<div class="text-column"><h1>Past Research</h1>
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Effective Distance Preservation of Weight Reduced Codes and Higher Dim HGPs</h2>
-		<p>Good quantum error correcting codes often have high weight stabilizer. This results in more expensive measurements and as such, a higher effective error rate.
-			Starting with <a href="https://arxiv.org/abs/2102.10030">Hasting&#39;s work</a>, we show effective distance preservation for weight reduced codes and higher dimensional hypergraph product codes.
-			See the paper on <a href="https://arxiv.org/pdf/2409.02193">arXiv</a>.
+	<div class="research-item svelte-1owwzaz"><h3 class="svelte-1owwzaz">Formal Proofs for Transformers</h3>
+		<span class="tag">ML Theory</span>
+		<p>Proving formal statements about transformer behavior given their weights.
+			Leveraging techniques from verification and formal methods to make rigorous claims about specific neural network computations.
 		</p></div>
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Multiparty Secret Leader Election</h2>
+
+	<hr class="svelte-1owwzaz">
+
+	
+	<h2 class="section-header">Quantum Cryptography &amp; Computing</h2>
+
+	<div class="research-item svelte-1owwzaz"><h3 class="svelte-1owwzaz">One-Time Programs &amp; Quantum Cryptography</h3>
+		<span class="tag">Quantum Crypto</span>
+		<p>Building cryptographic primitives from physics rather than computational assumptions.
+			Recent work includes verifiable one-time programs enabling single-round secure computation
+			(<a href="https://arxiv.org/abs/2509.22290">arXiv</a>),
+			constructions without long-term quantum memory
+			(<a href="https://arxiv.org/abs/2504.21842">arXiv</a>),
+			information-theoretic security from geometrically local adversaries
+			(<a href="https://arxiv.org/abs/2503.22016">arXiv</a>),
+			and one-time memories from stateless hardware
+			(<a href="https://arxiv.org/abs/2501.04168">arXiv</a>).
+		</p></div>
+
+	<div class="research-item svelte-1owwzaz"><h3 class="svelte-1owwzaz">Depth Bounded Quantum Cryptography</h3>
+		<span class="tag">Quantum Crypto</span>
+		<p>Exploring how quantum cryptography becomes more powerful when adversaries have limited quantum resources — a realistic model for near-term security.
+		</p></div>
+
+	<div class="research-item svelte-1owwzaz"><h3 class="svelte-1owwzaz">Quantum Error Correction</h3>
+		<span class="tag">Quantum Computing</span>
+		<p>Work on weight-reduced codes, hypergraph products, and improved decoding algorithms.
+			Includes effective distance preservation for weight reduced codes (<a href="https://arxiv.org/abs/2409.02193">arXiv</a>)
+			and improved Small-Set-Flip decoding presented at QIP 2024 (<a href="https://arxiv.org/abs/2311.00877">arXiv</a>).
+		</p></div>
+
+	<hr class="svelte-1owwzaz">
+
+	
+	<h2 class="section-header">Selected Past Work</h2>
+
+	<div class="research-item svelte-1owwzaz"><h3 class="svelte-1owwzaz">Multiparty Secret Leader Election</h3>
+		<span class="tag">Cryptography</span>
 		<p>Work done while at the Ethereum Foundation with Mark Simkin to improve communication cost of secret leader election for multiple leaders.
-			The work resulted in a novel data independent and oblivious priority queue.
+			Resulted in a novel data independent and oblivious priority queue.
 		</p></div>
 
-
-
-
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Addressing Stopping Failures for Small Set Flip Decoding of Hypergraph Product Codes</h2>
-		<p>Work done with Anirudh Krishna and Michael Beverland to improve speed and decrease word error
-			rates for
-			<a href="https://arxiv.org/abs/1504.00822">hypergraph product codes (also known as quantum expander codes).</a>
-			Work had an order of magnitude improvement in decoding rates and speed. The paper was presented
-			at a poster in QIP 2024. The paper can be found on
-			<a href="https://arxiv.org/pdf/2311.00877.pdf">arXiv</a>.
+	<div class="research-item svelte-1owwzaz"><h3 class="svelte-1owwzaz">Weighted Secret Sharing from the Wiretap Channel</h3>
+		<span class="tag">Information Theory</span>
+		<p>With Fabrice Benhamouda and Shai Halevi, introduced a novel connection between weighted secret sharing and wiretap channels.
+			Presented at Information-Theoretic Cryptography (ITC) 2023 (<a href="https://eprint.iacr.org/2022/1578.pdf">ePrint</a>).
 		</p></div>
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Weighted Secret Sharing from the Wiretap Channel</h2>
-		<p>With Fabrice Benhamouda and Shai Halevi, we introduced a novel connection between weighted
-			secret sharing and wiretap channels. Achieving a ramped weighted secret sharing scheme, we
-			eliminate dependence on the number of parties and use little public information. The paper was
-			presented at Information-Theoretic Cryptography (ITC) 2023 and the paper can be found on <a href="https://eprint.iacr.org/2022/1578.pdf">ePrint</a>.
-		</p></div>
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">3D Turtles and Drawing Math</h2>
-		<p>A fun side project, I explored whether a sequence of movements to an object generated by
-			rational numbers will form a closed path. Surprisingly, the question of closure is initmatly
-			connected to discrete logs and roots of a very specific multinomial with coefficients of +/-
-			1. The paper can be found on <a href="https://github.com/Lev-Stambler/3D-Turtles/blob/master/paper/Paper.pdf">Github</a>. With a friend <a href="https://www.shivaperi.com/">(Shiva Peri)</a>, we also created a
-				visualization which creates some rather beautiful shapes. We also posted an
-				<a href="https://3dturtles.groked.co/">interactive website</a> to play around with parameters.
-		</p>
-		<img style="justify-self: center; width: 100%; padding: 0 20%; box-sizing: border-box;" src="https://raw.githubusercontent.com/Lev-Stambler/3D-Turtles/master/curated-list/second.png" alt=""></div>
+
+	<div class="research-item svelte-1owwzaz"><h3 class="svelte-1owwzaz">3D Turtles and Drawing Math</h3>
+		<span class="tag">Math Visualization</span>
+		<p>Explored whether movement sequences generated by rational numbers form closed paths.
+			The closure question connects to discrete logs and specific multinomial roots.
+			<a href="https://github.com/Lev-Stambler/3D-Turtles/blob/master/paper/Paper.pdf">Paper</a> |
+			<a href="https://3dturtles.groked.co/">Interactive demo</a></p>
+		<img style="justify-self: center; width: 100%; padding: 0 20%; box-sizing: border-box; margin-top: 1rem;" src="https://raw.githubusercontent.com/Lev-Stambler/3D-Turtles/master/curated-list/second.png" alt="3D Turtle visualization"></div>
 </div>`;
 });
 export {

@@ -1,6 +1,6 @@
-import { _ as __vite_glob_0_0, a as __vite_glob_0_1, b as __vite_glob_0_2 } from "../../../chunks/ramsey-theory-is-fun.js";
+import { _ as __vite_glob_0_0, a as __vite_glob_0_1, b as __vite_glob_0_2, c as __vite_glob_0_3 } from "../../../chunks/sens-feats.js";
 import { e as error } from "../../../chunks/index.js";
-const imports = /* @__PURE__ */ Object.assign({ "../../lib/posts/folded-data-availability.md": __vite_glob_0_0, "../../lib/posts/post-theorem-prover.md": __vite_glob_0_1, "../../lib/posts/ramsey-theory-is-fun.md": __vite_glob_0_2 });
+const imports = /* @__PURE__ */ Object.assign({ "../../lib/posts/folded-data-availability.md": __vite_glob_0_0, "../../lib/posts/post-theorem-prover.md": __vite_glob_0_1, "../../lib/posts/ramsey-theory-is-fun.md": __vite_glob_0_2, "../../lib/posts/sens-feats.md": __vite_glob_0_3 });
 const posts = [];
 for (const path in imports) {
   const post = imports[path];

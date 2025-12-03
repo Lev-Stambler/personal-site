@@ -33,14 +33,14 @@
     "file": "chunks/prod-ssr.js",
     "name": "prod-ssr"
   },
-  "_ramsey-theory-is-fun.js": {
-    "file": "chunks/ramsey-theory-is-fun.js",
-    "name": "ramsey-theory-is-fun",
+  "_sens-feats.js": {
+    "file": "chunks/sens-feats.js",
+    "name": "sens-feats",
     "imports": [
       "_hooks.js"
     ],
     "css": [
-      "_app/immutable/assets/ramsey-theory-is-fun-g8BUNgkr.css"
+      "_app/immutable/assets/sens-feats-pMKFtm-t.css"
     ]
   },
   "_stores.js": {
@@ -70,7 +70,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout-vBMTLobL.css"
+      "_app/immutable/assets/_layout-BBd-927M.css"
     ],
     "assets": [
       "_app/immutable/assets/fira-mono-cyrillic-ext-400-normal-B04YIrm4.woff2",
@@ -169,6 +169,9 @@
     "isEntry": true,
     "imports": [
       "_hooks.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-BoGmu93v.css"
     ]
   },
   "src/routes/about/+page.ts": {
@@ -198,13 +201,25 @@
       "_environment.js"
     ]
   },
+  "src/routes/curious/+page.svelte": {
+    "file": "entries/pages/curious/_page.svelte.js",
+    "name": "entries/pages/curious/_page.svelte",
+    "src": "src/routes/curious/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_hooks.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-C8JWjgQ5.css"
+    ]
+  },
   "src/routes/musings/+page.server.ts": {
     "file": "entries/pages/musings/_page.server.ts.js",
     "name": "entries/pages/musings/_page.server.ts",
     "src": "src/routes/musings/+page.server.ts",
     "isEntry": true,
     "imports": [
-      "_ramsey-theory-is-fun.js",
+      "_sens-feats.js",
       "_index.js"
     ]
   },
@@ -235,7 +250,7 @@
     "src": "src/routes/musings/[slug]/+page.ts",
     "isEntry": true,
     "imports": [
-      "_ramsey-theory-is-fun.js"
+      "_sens-feats.js"
     ]
   },
   "src/routes/research/+page.svelte": {
@@ -247,7 +262,7 @@
       "_hooks.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-PpeqhM1Z.css"
+      "_app/immutable/assets/_page-BMHh3c3B.css"
     ]
   },
   "src/routes/research/+page.ts": {
@@ -268,7 +283,7 @@
       "_hooks.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-PpeqhM1Z.css"
+      "_app/immutable/assets/_page-DT5zG2tV.css"
     ]
   },
   "src/routes/work/+page.ts": {
