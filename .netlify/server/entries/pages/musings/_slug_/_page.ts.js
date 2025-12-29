@@ -1,21 +1,13 @@
-import { _ as __vite_glob_0_0, a as __vite_glob_0_1 } from "../../../../chunks/post-theorem-prover.js";
-const allPosts = /* @__PURE__ */ Object.assign({ "../../../lib/posts/folded-data-availability.md": __vite_glob_0_0, "../../../lib/posts/post-theorem-prover.md": __vite_glob_0_1 });
-let posts = [];
-for (let path in allPosts) {
-  const post = allPosts[path];
-  const slug = post.metadata.slug;
-  const p = { post, slug, metadata: post.metadata };
-  posts.push(p);
-}
+import { e as error } from "../../../../chunks/index2.js";
+import { a as getPostBySlug } from "../../../../chunks/index.js";
 function load({ params }) {
-  const { slug } = params;
-  const filteredPost = posts.find((p) => {
-    return p.slug.toLowerCase() === slug.toLowerCase();
-  });
+  const post = getPostBySlug(params.slug);
+  if (!post) {
+    throw error(404, `Post not found: ${params.slug}`);
+  }
   return {
-    // Tell page to load that post's module
-    page: filteredPost.post.default,
-    ...filteredPost.metadata
+    page: post.component,
+    ...post.metadata
   };
 }
 export {

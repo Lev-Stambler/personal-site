@@ -1,9 +1,9 @@
-import * as universal from '../entries/pages/musings/_slug_/_page.ts.js';
+import * as universal from '../entries/pages/research/_page.ts.js';
 
 export const index = 6;
-export const component = async () => (await import('../entries/pages/musings/_slug_/_page.svelte.js')).default;
-export const file = '_app/immutable/components/pages/musings/_slug_/_page.svelte-CKDu0dLx.js';
+export const component = async () => (await import('../entries/pages/research/_page.svelte.js')).default;
+export const file = '_app/immutable/components/pages/research/_page.svelte-B5FSUQbC.js';
 export { universal };
-export const imports = ["_app/immutable/components/pages/musings/_slug_/_page.svelte-CKDu0dLx.js","_app/immutable/chunks/index-CJnp8ZGS.js","_app/immutable/modules/pages/musings/_slug_/_page.ts-BbFRZ1kN.js","_app/immutable/chunks/_page-OItfQa_8.js","_app/immutable/chunks/index-CJnp8ZGS.js"];
-export const stylesheets = [];
+export const imports = ["_app/immutable/components/pages/research/_page.svelte-B5FSUQbC.js","_app/immutable/chunks/index-BZDOwnAI.js","_app/immutable/modules/pages/research/_page.ts-CVdd6o-6.js","_app/immutable/chunks/environment-R8ovVqwX.js","_app/immutable/chunks/_page-Bj0-sGVk.js"];
+export const stylesheets = ["_app/immutable/assets/_page-BPL05GMo.css"];
 export const fonts = [];

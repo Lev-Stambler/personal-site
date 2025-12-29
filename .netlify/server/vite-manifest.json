@@ -7,7 +7,7 @@
     "imports": [
       "_hooks.js",
       "_prod-ssr.js",
-      "_index.js"
+      "_index2.js"
     ],
     "dynamicImports": [
       "_hooks.js"
@@ -27,14 +27,17 @@
   },
   "_index.js": {
     "file": "chunks/index.js",
-    "name": "index"
-  },
-  "_post-theorem-prover.js": {
-    "file": "chunks/post-theorem-prover.js",
-    "name": "post-theorem-prover",
+    "name": "index",
     "imports": [
       "_hooks.js"
+    ],
+    "css": [
+      "_app/immutable/assets/index-a7Yx680l.css"
     ]
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index"
   },
   "_prod-ssr.js": {
     "file": "chunks/prod-ssr.js",
@@ -67,7 +70,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout-CUOX7IDV.css"
+      "_app/immutable/assets/_layout-CmfdlyX0.css"
     ],
     "assets": [
       "_app/immutable/assets/fira-mono-cyrillic-ext-400-normal-B04YIrm4.woff2",
@@ -118,31 +121,12 @@
       "_environment.js"
     ]
   },
-  "src/routes/blog/+page.svelte": {
-    "file": "entries/pages/blog/_page.svelte.js",
-    "name": "entries/pages/blog/_page.svelte",
-    "src": "src/routes/blog/+page.svelte",
-    "isEntry": true,
-    "imports": [
-      "_hooks.js"
-    ]
-  },
-  "src/routes/blog/+page.ts": {
-    "file": "entries/pages/blog/_page.ts.js",
-    "name": "entries/pages/blog/_page.ts",
-    "src": "src/routes/blog/+page.ts",
-    "isEntry": true,
-    "imports": [
-      "_environment.js"
-    ]
-  },
   "src/routes/musings/+page.server.ts": {
     "file": "entries/pages/musings/_page.server.ts.js",
     "name": "entries/pages/musings/_page.server.ts",
     "src": "src/routes/musings/+page.server.ts",
     "isEntry": true,
     "imports": [
-      "_post-theorem-prover.js",
       "_index.js"
     ]
   },
@@ -173,7 +157,8 @@
     "src": "src/routes/musings/[slug]/+page.ts",
     "isEntry": true,
     "imports": [
-      "_post-theorem-prover.js"
+      "_index2.js",
+      "_index.js"
     ]
   },
   "src/routes/research/+page.svelte": {

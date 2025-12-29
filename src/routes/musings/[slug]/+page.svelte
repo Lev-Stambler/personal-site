@@ -1,8 +1,6 @@
-<script lang="typescript">
-	// Declare the page variable to use on the client
+<script lang="ts">
 	export let data;
 	const { page, title } = data;
-	console.log(data);
 </script>
 
 <!-- Here we'll load the component of the blog post page itself -->

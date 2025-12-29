@@ -1,27 +1,15 @@
-// Since it's on +page.js, this code will run before page load (likely on server)
+import { error } from '@sveltejs/kit';
+import { getPostBySlug } from '$lib/posts';
 
-// Get posts info
-const allPosts = import.meta.glob('../../../lib/posts/*.md', { eager: true });
+export function load({ params }: { params: { slug: string } }) {
+	const post = getPostBySlug(params.slug);
 
-let posts: any[] = [];
-// Get the posts' slugs
-for (let path in allPosts) {
-	const post: any = allPosts[path];
-	const slug = post.metadata.slug;
-	const p = { post, slug, metadata: post.metadata };
-	posts.push(p);
-}
+	if (!post) {
+		throw error(404, `Post not found: ${params.slug}`);
+	}
 
-export function load({ params }: any) {
-	const {slug} = params;
-
-	// Find the post with the slug
-	const filteredPost = posts.find((p) => {
-		return p.slug.toLowerCase() === slug.toLowerCase();
-	});
 	return {
-		// Tell page to load that post's module
-		page: filteredPost.post.default,
-		...(filteredPost.metadata)
+		page: post.component,
+		...post.metadata
 	};
 }

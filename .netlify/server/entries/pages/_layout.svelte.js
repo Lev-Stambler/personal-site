@@ -16,25 +16,27 @@ const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 			
 			<li${add_attribute("aria-current", $page.url.pathname === "/research" ? "page" : void 0, 0)} class="svelte-1u9z1tp"><a href="/research" class="svelte-1u9z1tp">Research</a></li>
 			<li${add_attribute("aria-current", $page.url.pathname === "/work" ? "page" : void 0, 0)} class="svelte-1u9z1tp"><a href="/work" class="svelte-1u9z1tp">Consulting</a></li>
-			<li${add_attribute("aria-current", $page.url.pathname === "/musings" ? "page" : void 0, 0)} class="svelte-1u9z1tp"><a href="/musings" class="svelte-1u9z1tp">Musings</a></li></ul>
+			<li${add_attribute("aria-current", $page.url.pathname === "/musings" ? "page" : void 0, 0)} class="svelte-1u9z1tp"><a href="/musings" class="svelte-1u9z1tp">Blog</a></li></ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-1u9z1tp"><path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="svelte-1u9z1tp"></path></svg></nav>
 
 	<div class="corner svelte-1u9z1tp"></div>
 </header>`;
 });
 const css = {
-  code: ".app.svelte-1gotbf5.svelte-1gotbf5{min-height:100vh;display:grid;grid-template-rows:auto auto auto}main.svelte-1gotbf5.svelte-1gotbf5{padding:1rem;width:100%;max-width:64rem;margin:0 auto;box-sizing:border-box;min-height:80vh}footer.svelte-1gotbf5.svelte-1gotbf5{display:grid;grid-template-columns:repeat(4, 1fr);justify-content:center;justify-items:center;padding:0 25% !important;margin-bottom:1rem}footer.svelte-1gotbf5 a.svelte-1gotbf5{font-weight:bold}@media(min-width: 480px){footer.svelte-1gotbf5.svelte-1gotbf5{padding:12px 0}}",
+  code: ".app.svelte-1px2lhh.svelte-1px2lhh{min-height:100vh;display:grid;grid-template-rows:auto auto auto}main.svelte-1px2lhh.svelte-1px2lhh{padding:1rem;width:100%;max-width:64rem;margin:0 auto;box-sizing:border-box;min-height:80vh}footer.svelte-1px2lhh.svelte-1px2lhh{display:grid;grid-template-columns:repeat(3, 1fr);justify-content:center;justify-items:center;padding:0 25% !important;margin-bottom:1rem}footer.svelte-1px2lhh p.svelte-1px2lhh{grid-column:1 / span 3;text-align:left;font-size:0.9rem;width:100%}footer.svelte-1px2lhh a.svelte-1px2lhh{font-weight:bold}@media(min-width: 480px){footer.svelte-1px2lhh.svelte-1px2lhh{padding:12px 0}}",
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `<div class="app svelte-1gotbf5">${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
+  return `<div class="app svelte-1px2lhh">${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
 
-	<main class="svelte-1gotbf5">${slots.default ? slots.default({}) : ``}</main>
+	<main class="svelte-1px2lhh">${slots.default ? slots.default({}) : ``}</main>
 
-	<footer class="svelte-1gotbf5"><a href="https://github.com/Lev-Stambler" class="svelte-1gotbf5">Github</a>
-		<a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwibxLKEyeD7AhW5GlkFHS-fAyoQFnoECBgQAQ&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Flev-stambler-888052154" class="svelte-1gotbf5">LinkedIn</a>
-		<a href="mailto:lev.stambler@gmail.com" class="svelte-1gotbf5">Email Me</a></footer>
+	<footer class="svelte-1px2lhh"><a href="https://github.com/Lev-Stambler" class="svelte-1px2lhh">Github</a>
+		<a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwibxLKEyeD7AhW5GlkFHS-fAyoQFnoECBgQAQ&url=https%3A%2F%2Fwww.linkedin.com%2Fin%2Flev-stambler-888052154" class="svelte-1px2lhh">LinkedIn</a>
+		<a href="mailto:lev.stambler@gmail.com" class="svelte-1px2lhh">Email Me</a>
+		<p class="svelte-1px2lhh">(*) If we are at the same conference, send a message for a tea break!
+		</p></footer>
 </div>`;
 });
 export {

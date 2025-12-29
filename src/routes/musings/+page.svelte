@@ -4,8 +4,7 @@
 	// const musings = [['Theorem Provers',  'Thoughts here']];
 	export let data;
 	let { posts } = data;
-	console.log(posts);
-	// Posts-sorted by date
+	// Posts sorted by date
 	let sortedPosts = posts.sort((a, b) => {
 		return new Date(b.date) - new Date(a.date);
 	});

@@ -1,6 +1,6 @@
 import { c as create_ssr_component, d as setContext, v as validate_component, m as missing_component, n as noop, f as safe_not_equal } from "./chunks/hooks.js";
 import { D as DEV } from "./chunks/prod-ssr.js";
-import { H as HttpError, R as Redirect, e as error, A as ActionFailure, j as json } from "./chunks/index.js";
+import { H as HttpError, R as Redirect, e as error, A as ActionFailure, j as json } from "./chunks/index2.js";
 import * as devalue from "devalue";
 import { parse, serialize } from "cookie";
 import * as set_cookie_parser from "set-cookie-parser";
@@ -2599,7 +2599,7 @@ class Server {
       app_template,
       app_template_contains_nonce: false,
       error_template,
-      version: "1711913755687"
+      version: "1767033760432"
     };
   }
   /**

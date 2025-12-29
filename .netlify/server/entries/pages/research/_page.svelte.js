@@ -8,30 +8,33 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${$$result.head += `<!-- HEAD_svelte-1cdcmlb_START -->${$$result.title = `<title>Research</title>`, ""}<meta name="description" content="Research"><!-- HEAD_svelte-1cdcmlb_END -->`, ""}
 
 <div class="text-column current-research"><h1>Current Research Project</h1>
-	
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Dictator Restrictions for Transformers</h2>
-		<p>Transformers have taken the world by storm recently. However, they are not without their flaws. Specifically, proving any 
-			general statement, even when restricting to a specific model, is quite challenging. We are leveraging existing work on
-			robustness in attempt to show that for specific restrictions of the input, the transformer becomes less expressive.
+	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Depth Bounded Quantum Cryptography</h2>
+		<p>Quantum cryptography is a powerful tool for secure communication. However, it is not without its limitations in the ideal model.
+			We are exploring how quantum cryptography can be <b>more powerful</b> in the a somewhat <b>realistic</b> model where the adversary has limited quantum resources.
 		</p></div>
-	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Towards Practical Weight Reduction for Quantum Error Correcting Codes</h2>
-		<p>Good quantum error correcting codes often have high weight stabilizer. This results in more expensive measurements and as such, a higher effective error rate.
-			Starting with <a href="https://arxiv.org/abs/2102.10030">Hasting&#39;s work</a>, we are working towards a method for weight reduction with less overhead.
-			We currently have minor positive results for sub-steps in weight reduction.
+	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Formal Proofs for Transformers</h2>
+		<p>Transformers have taken the world by storm recently. However, they are not without their flaws. Specifically, proving any 
+			general statement, even when restricting to a specific model, is quite challenging. We are leveraging existing work 
+			and new techniques to prove formal statements about the behavior of specific transformers given their weights.
 		</p></div></div>
 
 <hr>
 
-<div class="text-column"><h1>Research Being Wrapped Up</h1>
 
+<div class="text-column"><h1>Past Research</h1>
+	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Effective Distance Preservation of Weight Reduced Codes and Higher Dim HGPs</h2>
+		<p>Good quantum error correcting codes often have high weight stabilizer. This results in more expensive measurements and as such, a higher effective error rate.
+			Starting with <a href="https://arxiv.org/abs/2102.10030">Hasting&#39;s work</a>, we show effective distance preservation for weight reduced codes and higher dimensional hypergraph product codes.
+			See the paper on <a href="https://arxiv.org/pdf/2409.02193">arXiv</a>.
+		</p></div>
 	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Multiparty Secret Leader Election</h2>
 		<p>Work done while at the Ethereum Foundation with Mark Simkin to improve communication cost of secret leader election for multiple leaders.
 			The work resulted in a novel data independent and oblivious priority queue.
-		</p></div></div>
+		</p></div>
 
-<hr>
 
-<div class="text-column"><h1>Past Research</h1>
+
+
 	<div class="research-item svelte-1ri4gue"><h2 class="svelte-1ri4gue">Addressing Stopping Failures for Small Set Flip Decoding of Hypergraph Product Codes</h2>
 		<p>Work done with Anirudh Krishna and Michael Beverland to improve speed and decrease word error
 			rates for
@@ -51,8 +54,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 			rational numbers will form a closed path. Surprisingly, the question of closure is initmatly
 			connected to discrete logs and roots of a very specific multinomial with coefficients of +/-
 			1. The paper can be found on <a href="https://github.com/Lev-Stambler/3D-Turtles/blob/master/paper/Paper.pdf">Github</a>. With a friend <a href="https://www.shivaperi.com/">(Shiva Peri)</a>, we also created a
-			visualization which creates some rather beautiful shapes. We also posted an
-			<a href="https://3dturtles.groked.co/">interactive website</a> to play around with parameters.
+				visualization which creates some rather beautiful shapes. We also posted an
+				<a href="https://3dturtles.groked.co/">interactive website</a> to play around with parameters.
 		</p>
 		<img style="justify-self: center; width: 100%; padding: 0 20%; box-sizing: border-box;" src="https://raw.githubusercontent.com/Lev-Stambler/3D-Turtles/master/curated-list/second.png" alt=""></div>
 </div>`;
