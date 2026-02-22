@@ -13,6 +13,8 @@
 
 	<footer>
 		<a href="https://github.com/Lev-Stambler">Github</a>
+		<a href="https://www.linkedin.com/in/lev-stambler-888052154/">LinkedIn</a>
+		<a href="https://scholar.google.com/citations?hl=en&user=ot6uV9cAAAAJ&view_op=list_works">Google Scholar</a>
 		<a href="https://x.com/StamblerLev">X</a>
 		<a href="mailto:lev.stambler@gmail.com">Email Me</a>
 		<p>
@@ -40,7 +42,7 @@
 
 	footer {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		justify-content: center;
 		justify-items: center;
 		padding: 0 25% !important;
@@ -48,7 +50,7 @@
 	}
 
 	footer p {
-		grid-column: 1 / span 3;
+		grid-column: 1 / span 5;
 		text-align: left;
 		font-size: 0.9rem;
 		width: 100%;
@@ -73,6 +75,18 @@
 	@media (min-width: 480px) {
 		footer {
 			padding: 12px 0;
+		}
+	}
+
+	@media (max-width: 640px) {
+		footer {
+			grid-template-columns: repeat(2, 1fr);
+			padding: 0 1rem !important;
+			gap: 0.5rem 1rem;
+		}
+
+		footer p {
+			grid-column: 1 / span 2;
 		}
 	}
 </style>

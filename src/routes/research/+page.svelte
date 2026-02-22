@@ -13,6 +13,14 @@
 	<h2 class="section-header">AI Research</h2>
 
 	<div class="research-item">
+		<h3>Undisclosed Quantization Research</h3>
+		<span class="tag">Model Efficiency</span>
+		<p>
+			Currently conducting undisclosed research on novel quantization methods to push below the 4-bit boundary while preserving model quality.
+		</p>
+	</div>
+
+	<div class="research-item">
 		<h3>Mechanistic Interpretability</h3>
 		<span class="tag">Interpretability / Safety</span>
 		<p>

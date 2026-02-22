@@ -23,19 +23,21 @@ const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 </header>`;
 });
 const css = {
-  code: ".app.svelte-17ev9rj.svelte-17ev9rj{min-height:100vh;display:grid;grid-template-rows:auto auto auto}main.svelte-17ev9rj.svelte-17ev9rj{padding:1rem;width:100%;margin:0 auto;box-sizing:border-box;min-height:80vh}footer.svelte-17ev9rj.svelte-17ev9rj{display:grid;grid-template-columns:repeat(3, 1fr);justify-content:center;justify-items:center;padding:0 25% !important;margin-bottom:1rem}footer.svelte-17ev9rj p.svelte-17ev9rj{grid-column:1 / span 3;text-align:left;font-size:0.9rem;width:100%}footer.svelte-17ev9rj a.svelte-17ev9rj{font-weight:bold}footer.svelte-17ev9rj .tea-hint.svelte-17ev9rj{color:var(--color-text);font-weight:normal;text-decoration:none;transition:color 0.3s ease}footer.svelte-17ev9rj .tea-hint.svelte-17ev9rj:hover{color:var(--color-theme-2);text-decoration:none}@media(min-width: 480px){footer.svelte-17ev9rj.svelte-17ev9rj{padding:12px 0}}",
+  code: ".app.svelte-1g2ae6h.svelte-1g2ae6h{min-height:100vh;display:grid;grid-template-rows:auto auto auto}main.svelte-1g2ae6h.svelte-1g2ae6h{padding:1rem;width:100%;margin:0 auto;box-sizing:border-box;min-height:80vh}footer.svelte-1g2ae6h.svelte-1g2ae6h{display:grid;grid-template-columns:repeat(5, 1fr);justify-content:center;justify-items:center;padding:0 25% !important;margin-bottom:1rem}footer.svelte-1g2ae6h p.svelte-1g2ae6h{grid-column:1 / span 5;text-align:left;font-size:0.9rem;width:100%}footer.svelte-1g2ae6h a.svelte-1g2ae6h{font-weight:bold}footer.svelte-1g2ae6h .tea-hint.svelte-1g2ae6h{color:var(--color-text);font-weight:normal;text-decoration:none;transition:color 0.3s ease}footer.svelte-1g2ae6h .tea-hint.svelte-1g2ae6h:hover{color:var(--color-theme-2);text-decoration:none}@media(min-width: 480px){footer.svelte-1g2ae6h.svelte-1g2ae6h{padding:12px 0}}@media(max-width: 640px){footer.svelte-1g2ae6h.svelte-1g2ae6h{grid-template-columns:repeat(2, 1fr);padding:0 1rem !important;gap:0.5rem 1rem}footer.svelte-1g2ae6h p.svelte-1g2ae6h{grid-column:1 / span 2}}",
   map: null
 };
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `<div class="app svelte-17ev9rj">${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
+  return `<div class="app svelte-1g2ae6h">${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
 
-	<main class="svelte-17ev9rj">${slots.default ? slots.default({}) : ``}</main>
+	<main class="svelte-1g2ae6h">${slots.default ? slots.default({}) : ``}</main>
 
-	<footer class="svelte-17ev9rj"><a href="https://github.com/Lev-Stambler" class="svelte-17ev9rj">Github</a>
-		<a href="https://x.com/StamblerLev" class="svelte-17ev9rj">X</a>
-		<a href="mailto:lev.stambler@gmail.com" class="svelte-17ev9rj">Email Me</a>
-		<p class="svelte-17ev9rj"><a href="/curious" class="tea-hint svelte-17ev9rj">(*)</a> If we are at the same conference, send a message for a tea break!
+	<footer class="svelte-1g2ae6h"><a href="https://github.com/Lev-Stambler" class="svelte-1g2ae6h">Github</a>
+		<a href="https://www.linkedin.com/in/lev-stambler-888052154/" class="svelte-1g2ae6h">LinkedIn</a>
+		<a href="https://scholar.google.com/citations?hl=en&user=ot6uV9cAAAAJ&view_op=list_works" class="svelte-1g2ae6h">Google Scholar</a>
+		<a href="https://x.com/StamblerLev" class="svelte-1g2ae6h">X</a>
+		<a href="mailto:lev.stambler@gmail.com" class="svelte-1g2ae6h">Email Me</a>
+		<p class="svelte-1g2ae6h"><a href="/curious" class="tea-hint svelte-1g2ae6h">(*)</a> If we are at the same conference, send a message for a tea break!
 		</p></footer>
 </div>`;
 });

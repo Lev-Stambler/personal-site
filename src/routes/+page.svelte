@@ -11,15 +11,16 @@
 	<div class="left">
 		<h1 style="text-align: left;">Hello!</h1>
 		<p>
-			I'm Lev, a PhD student at UMD researching at the intersection of
-			<span class="highlight">quantum computing</span> and <span class="highlight">AI</span>.
+			I'm Lev, a PhD student at UMD with a background in
+			<span class="highlight">AI</span> and <span class="highlight">quantum cryptography</span>, with over 4 years
+			of consulting on AI systems and cryptography.
 		</p>
 		<p style="margin-top: 1rem;">My work spans:</p>
 		<ul>
+			<li><strong>Model Quantization Research</strong> — Making models more efficient and deployable</li>
 			<li><strong>AI Safety & Interpretability</strong> — Understanding what neural networks actually learn</li>
-			<li><strong>ML Theory</strong> — Formal proofs for transformer behavior</li>
+			<li><strong>Deep Tech Consulting</strong> — Turning research into production-grade engineering</li>
 			<li><strong>Quantum Cryptography</strong> — Security under realistic adversary models</li>
-			<li><strong>Applied AI</strong> — Building systems that work</li>
 			<li>I like tea *</li>
 		</ul>
 	</div>

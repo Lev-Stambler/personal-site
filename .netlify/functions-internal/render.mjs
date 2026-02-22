@@ -6,7 +6,7 @@ export const handler = init({
 	assets: new Set(["blog/MI.gif","blog/folded-data-avail/merkletree.png","blog/folded-data-avail/treescreenshot.png","blog/lean-scratch.png","blog/ramsey.svg","blog/typst-style.css","blog/warrant.webp","favicon.png","posts/ramsey-theory-is-fun.pdf","robots.txt"]),
 	mimeTypes: {".gif":"image/gif",".png":"image/png",".svg":"image/svg+xml",".css":"text/css",".webp":"image/webp",".pdf":"application/pdf",".txt":"text/plain"},
 	_: {
-		entry: {"file":"_app/immutable/start-C_SJSRW9.js","imports":["_app/immutable/start-C_SJSRW9.js","_app/immutable/chunks/index-BIkSNYnH.js","_app/immutable/chunks/singletons-8LBe1h63.js"],"stylesheets":[],"fonts":[]},
+		entry: {"file":"_app/immutable/start-BJKAO19j.js","imports":["_app/immutable/start-BJKAO19j.js","_app/immutable/chunks/index-BIkSNYnH.js","_app/immutable/chunks/singletons-8LBe1h63.js"],"stylesheets":[],"fonts":[]},
 		nodes: [
 			() => import('../server/nodes/0.js'),
 			() => import('../server/nodes/1.js'),

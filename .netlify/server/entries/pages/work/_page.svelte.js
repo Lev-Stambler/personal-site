@@ -8,8 +8,10 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${$$result.head += `<!-- HEAD_svelte-zojyp6_START -->${$$result.title = `<title>Work &amp; Consulting</title>`, ""}<meta name="description" content="AI Research and Cryptography Consulting"><!-- HEAD_svelte-zojyp6_END -->`, ""}
 
 <div class="text-column"><h1>Work &amp; Consulting</h1>
-	<p class="intro svelte-106hxlj">I occasionally take on research consulting and technical advisory work, particularly in
+	<p class="intro svelte-106hxlj">I&#39;ve spent over 4 years doing research consulting and technical advisory work, particularly in
 		<strong>AI systems</strong>, <strong>ML engineering</strong>, and <strong>cryptographic protocols</strong>.
+	</p>
+	<p>My current technical focus is model quantization research for more efficient, production-ready AI systems.
 	</p>
 
 	<h2 class="section-header">Current</h2>
@@ -66,7 +68,8 @@ const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <div class="cta-section svelte-106hxlj"><h2 class="svelte-106hxlj">Interested in working together?</h2>
 	<p>Reach out via <a href="mailto:lev.stambler@gmail.com">email</a> or
-		<a href="https://www.linkedin.com/in/lev-stambler-888052154/">LinkedIn</a>.
+		<a href="https://www.linkedin.com/in/lev-stambler-888052154/">LinkedIn</a>, or
+		<a href="https://scholar.google.com/citations?hl=en&user=ot6uV9cAAAAJ&view_op=list_works">Google Scholar</a>.
 	</p>
 </div>`;
 });
